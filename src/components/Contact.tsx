@@ -20,7 +20,7 @@ export default function Contact() {
           <li key={link.label}>
             <a
               href={link.href}
-              className="text-sm font-medium text-accent underline underline-offset-4 hover:opacity-80"
+              className="rounded-sm text-sm font-medium text-accent underline underline-offset-4 hover:opacity-80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
             >
               {link.label}
             </a>

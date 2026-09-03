@@ -15,7 +15,10 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur">
       <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-        <a href="#top" className="font-semibold tracking-tight">
+        <a
+          href="#top"
+          className="rounded-sm font-semibold tracking-tight focus-visible:outline-2 focus-visible:outline-accent"
+        >
           Ahmet Can Özdemir
         </a>
 
@@ -24,7 +27,7 @@ export default function Navbar() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="text-foreground/80 transition-colors hover:text-accent"
+                className="rounded-sm text-foreground/80 transition-colors hover:text-accent focus-visible:outline-2 focus-visible:outline-accent"
               >
                 {link.label}
               </a>
@@ -35,17 +38,29 @@ export default function Navbar() {
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className="flex flex-col gap-1.5 md:hidden"
-          aria-label="Toggle menu"
+          className="relative flex h-6 w-6 flex-col items-center justify-center rounded-sm md:hidden focus-visible:outline-2 focus-visible:outline-accent"
+          aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
+          aria-controls="mobile-menu"
         >
-          <span className="h-0.5 w-6 bg-foreground" />
-          <span className="h-0.5 w-6 bg-foreground" />
+          <span
+            className={`absolute h-0.5 w-6 bg-foreground transition-transform ${
+              open ? "rotate-45" : "-translate-y-1.5"
+            }`}
+          />
+          <span
+            className={`absolute h-0.5 w-6 bg-foreground transition-transform ${
+              open ? "-rotate-45" : "translate-y-1.5"
+            }`}
+          />
         </button>
       </nav>
 
       {open && (
-        <ul className="flex flex-col gap-4 border-t border-border px-6 py-4 md:hidden">
+        <ul
+          id="mobile-menu"
+          className="flex flex-col gap-4 border-t border-border px-6 py-4 md:hidden"
+        >
           {links.map((link) => (
             <li key={link.href}>
               <a
