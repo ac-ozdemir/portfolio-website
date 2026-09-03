@@ -1,0 +1,31 @@
+export default function Hero() {
+  return (
+    <section id="top" className="mx-auto max-w-5xl px-6 py-24 md:py-32">
+      <p className="text-sm font-medium tracking-wide text-accent uppercase">
+        Data & BI Analyst
+      </p>
+      <h1 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight md:text-6xl">
+        Ahmet Can Özdemir
+      </h1>
+      <p className="mt-6 max-w-xl text-lg text-muted">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+
+      <div className="mt-10 flex flex-wrap gap-4">
+        <a
+          href="#projects"
+          className="rounded-md bg-accent px-6 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90"
+        >
+          View Projects
+        </a>
+        <a
+          href="#contact"
+          className="rounded-md border border-border px-6 py-3 text-sm font-medium transition-colors hover:border-accent hover:text-accent"
+        >
+          Get in Touch
+        </a>
+      </div>
+    </section>
+  );
+}
