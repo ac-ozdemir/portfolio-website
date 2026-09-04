@@ -9,15 +9,28 @@ export default function About() {
         </h2>
         <div className="mt-6 max-w-2xl space-y-4 text-lg text-foreground/90">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-            enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+            I&apos;m an Industrial Engineering graduate (Hacettepe
+            University, High Honor) who found his footing in data. My path
+            started with an Erasmus exchange in Logistics & Supply Chain
+            Management at the University of Duisburg-Essen and a Work &
+            Travel program in the US, before I joined Turkish Aerospace —
+            first as a Digital Transformation Engineer building real-time
+            data infrastructure, then for the past 3.5+ years as a (Senior)
+            Data Analyst, designing dashboards, KPI frameworks, and
+            automated reporting systems used across teams and leadership
+            levels.
           </p>
           <p>
-            Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-            cupidatat non proident, sunt in culpa qui officia deserunt
-            mollit anim id est laborum.
+            Outside of work, I spent three years in the leadership of my
+            university&apos;s scuba diving club, serving as Co-Chairman of
+            the Board, and I&apos;m a certified SSI Dive Master — an
+            experience that shaped how I think about calm decision-making
+            under constraints.
+          </p>
+          <p>
+            I enjoy the moment where a messy dataset turns into a dashboard
+            someone actually uses to make a decision — and I&apos;m always
+            looking for the next problem like that to solve.
           </p>
         </div>
       </Reveal>

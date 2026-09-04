@@ -35,6 +35,15 @@ function WorkflowIcon(props: SVGProps<SVGSVGElement>) {
   );
 }
 
+function SearchIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...IconProps(props)}>
+      <circle cx="11" cy="11" r="7" />
+      <line x1="21" y1="21" x2="16.65" y2="16.65" />
+    </svg>
+  );
+}
+
 function CodeIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg {...IconProps(props)}>
@@ -46,23 +55,30 @@ function CodeIcon(props: SVGProps<SVGSVGElement>) {
 
 const projects = [
   {
-    title: "Project One",
+    title: "Real-Time Operational Performance Dashboard",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
-    tags: ["Power BI", "SQL"],
+      "Consolidated real-time data from 130+ machines into a single Power BI dashboard, improving stakeholder visibility by 25% — independently recognized as a company-wide best-practice example.",
+    tags: ["Power BI", "SQL", "ETL"],
     Icon: BarChartIcon,
   },
   {
-    title: "Project Two",
+    title: "RFID-Based Shelf-Life Material Tracking",
     description:
-      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.",
-    tags: ["Python", "ETL"],
+      "Built a preventive asset-tracking system with RFID and Node-RED, cutting material loss incidents by 20% by moving tracking from reactive to proactive.",
+    tags: ["Node-RED", "MQTT", "SQL"],
     Icon: WorkflowIcon,
+  },
+  {
+    title: "Root-Cause Analysis on a Rising Cost Metric",
+    description:
+      "Used SQL-driven analysis to isolate the drivers behind a rising cost trend, enabling targeted process changes that delivered a 10% reduction.",
+    tags: ["SQL", "Root-Cause Analysis"],
+    Icon: SearchIcon,
   },
   {
     title: "This Portfolio",
     description:
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
+      "Designed and built this site end-to-end with Next.js, deployed on Vercel.",
     tags: ["Next.js", "TypeScript"],
     Icon: CodeIcon,
   },
@@ -76,7 +92,7 @@ export default function Projects() {
           Projects
         </h2>
 
-        <div className="mt-8 grid gap-6 md:grid-cols-3">
+        <div className="mt-8 grid gap-6 sm:grid-cols-2">
           {projects.map(({ title, description, tags, Icon }) => (
             <article
               key={title}

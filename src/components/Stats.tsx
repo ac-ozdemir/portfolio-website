@@ -1,8 +1,8 @@
 const stats = [
-  { value: "X+", label: "Years in Data & Analytics" },
-  { value: "X+", label: "Dashboards & Reports Shipped" },
-  { value: "X", label: "Cross-functional Teams Supported" },
-  { value: "X", label: "Certifications" },
+  { value: "3.5+", label: "Years in Data & Analytics" },
+  { value: "75+", label: "Dashboards & Reports Shipped" },
+  { value: "130+", label: "Machines Monitored in Real Time" },
+  { value: "3", label: "Certifications" },
 ];
 
 export default function Stats() {

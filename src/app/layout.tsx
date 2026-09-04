@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ahmet Can Özdemir — Data & BI Analyst",
+  title: "Ahmet Can Özdemir — Senior Data Analyst",
   description:
-    "Portfolio of Ahmet Can Özdemir, a Data & BI Analyst transitioning from aerospace/defense into tech.",
+    "Portfolio of Ahmet Can Özdemir, a Senior Data Analyst turning production data into decisions — dashboards, KPI frameworks, and automated reporting.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

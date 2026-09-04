@@ -2,28 +2,28 @@ import Reveal from "@/components/Reveal";
 
 const timeline = [
   {
-    period: "20XX — Present",
-    title: "Senior Data Analyst, TUSAŞ",
+    period: "Jul 2024 — Present",
+    title: "Senior Data Analyst, Turkish Aerospace",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
+      "Partnered with cross-functional stakeholders to translate business needs into scalable data models and KPIs. Designed an automated performance-tracking dashboard (Power BI) that improved stakeholder visibility by 25% and was independently recognized as a “world-class” best-practice example by external assessors. Built resource-planning dashboards via automated ETL pipelines (+15% efficiency), ran root-cause analysis that cut a rising cost metric by 10%, and built dynamic inventory reports that reduced fulfillment delays by 20%.",
   },
   {
-    period: "20XX — 20XX",
-    title: "Data Analyst, TUSAŞ",
+    period: "Nov 2022 — Jul 2024",
+    title: "Data Analyst, Digital Transformation, Turkish Aerospace",
     description:
-      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.",
+      "Led the design of a real-time data-instrumentation architecture connecting 60% of operational touchpoints. Built real-time monitoring dashboards (Grafana, SQL, ETL), increasing operational efficiency by 30%. Designed an RFID-based asset-tracking system that reduced loss incidents by 20%.",
   },
   {
-    period: "20XX",
-    title: "Erasmus Exchange, University of Duisburg-Essen",
+    period: "Education",
+    title: "B.Sc. Industrial Engineering, Hacettepe University",
     description:
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.",
+      "GPA 3.54/4.0, High Honor. Erasmus+ exchange in Logistics & Supply Chain Management, University of Duisburg-Essen (Germany).",
   },
   {
-    period: "20XX",
-    title: "Industrial Engineering Degree",
+    period: "Certifications",
+    title: "McKinsey Forward · SSI Dive Master · English C1 (iTEP)",
     description:
-      "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.",
+      "Continuous learning alongside full-time work, spanning business problem-solving, leadership under pressure, and language proficiency.",
   },
 ];
 

@@ -1,9 +1,10 @@
 import Reveal from "@/components/Reveal";
 
 const links = [
-  { label: "Email", href: "mailto:acozdemir1907@gmail.com" },
-  { label: "LinkedIn", href: "#" },
+  { label: "Email", href: "mailto:ac.ozdmr@gmail.com" },
+  { label: "LinkedIn", href: "https://linkedin.com/in/acozdemir" },
   { label: "GitHub", href: "https://github.com/ac-ozdemir" },
+  { label: "Download CV", href: "/cv.pdf" },
 ];
 
 export default function Contact() {
@@ -14,8 +15,7 @@ export default function Contact() {
           Contact
         </h2>
         <p className="mt-6 max-w-xl text-lg text-foreground/90">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit — open to
-          Data / BI / Product Analyst roles.
+          Open to Data / BI / Product Analyst roles — let&apos;s talk.
         </p>
 
         <ul className="mt-8 flex flex-wrap gap-6">
