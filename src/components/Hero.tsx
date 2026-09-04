@@ -8,9 +8,8 @@ export default function Hero() {
         Ahmet Can Özdemir
       </h1>
       <p className="mt-6 max-w-xl text-lg text-muted">
-        Turning production data into decisions — 3.5+ years designing
-        dashboards, KPI frameworks, and automated reporting systems at
-        Turkish Aerospace.
+        Turning data into decisions — 3.5+ years designing dashboards, KPI
+        frameworks, and automated reporting systems at Turkish Aerospace.
       </p>
 
       <div className="mt-10 flex flex-wrap gap-4">

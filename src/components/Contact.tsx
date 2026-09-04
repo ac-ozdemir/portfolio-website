@@ -15,7 +15,7 @@ export default function Contact() {
           Contact
         </h2>
         <p className="mt-6 max-w-xl text-lg text-foreground/90">
-          Open to Data / BI / Product Analyst roles — let&apos;s talk.
+          I&apos;d love to hear from you — reach out anytime.
         </p>
 
         <ul className="mt-8 flex flex-wrap gap-6">
