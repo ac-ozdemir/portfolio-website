@@ -1,7 +1,7 @@
 const stats = [
   { value: "3.5+", label: "Years in Data & Analytics" },
   { value: "75+", label: "Dashboards & Reports Shipped" },
-  { value: "130+", label: "Machines Monitored in Real Time" },
+  { value: "60%", label: "Operational Touchpoints Digitized" },
   { value: "3", label: "Certifications" },
 ];
 
