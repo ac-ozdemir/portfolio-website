@@ -22,11 +22,10 @@ export default function About() {
             and leadership levels.
           </p>
           <p>
-            Outside of work, I spent three years in the leadership of my
-            university&apos;s scuba diving club, serving as Co-Chairman of
-            the Board, and I&apos;m a certified SSI Dive Master — an
-            experience that shaped how I think about calm decision-making
-            under constraints.
+            Outside of work, I lead from the front — three years on my
+            university&apos;s diving club board (the last as chairman, now a
+            certified SSI Dive Master), and more recently on the road,
+            finishing my first marathon at 26. More on both further down.
           </p>
           <p>
             I enjoy the moment where a messy dataset turns into a dashboard
