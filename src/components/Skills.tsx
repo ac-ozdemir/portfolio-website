@@ -1,5 +1,3 @@
-import Reveal from "@/components/Reveal";
-
 const groups = [
   {
     label: "Analysis & BI",
@@ -49,29 +47,27 @@ const groups = [
 export default function Skills() {
   return (
     <section id="skills" className="mx-auto max-w-5xl px-6 py-24">
-      <Reveal>
-        <h2 className="text-sm font-medium tracking-wide text-accent uppercase">
-          Skills
-        </h2>
+      <h2 className="text-sm font-medium tracking-wide text-accent uppercase">
+        Skills
+      </h2>
 
-        <div className="mt-8 space-y-6">
-          {groups.map((group) => (
-            <div key={group.label}>
-              <p className="text-sm font-medium text-muted">{group.label}</p>
-              <ul className="mt-3 flex flex-wrap gap-2">
-                {group.items.map((item) => (
-                  <li
-                    key={item}
-                    className="rounded-full border border-border px-3 py-1 text-sm text-foreground/90"
-                  >
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </Reveal>
+      <div className="mt-8 space-y-6">
+        {groups.map((group) => (
+          <div key={group.label}>
+            <p className="text-sm font-medium text-muted">{group.label}</p>
+            <ul className="mt-3 flex flex-wrap gap-2">
+              {group.items.map((item) => (
+                <li
+                  key={item}
+                  className="rounded-full border border-border px-3 py-1 text-sm text-foreground/90"
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
     </section>
   );
 }

@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Reveal from "@/components/Reveal";
 
 type FeatureBannerProps = {
   id: string;
@@ -38,29 +37,27 @@ export default function FeatureBanner({
           <div className="absolute inset-0 bg-foreground" aria-hidden="true" />
         )}
 
-        <Reveal>
-          <div className="relative mx-auto w-full max-w-5xl">
-            <p className="text-sm font-medium tracking-wide text-white/70 uppercase">
-              {eyebrow}
-            </p>
-            <h2 className="mt-2 max-w-xl text-2xl font-semibold text-white md:text-3xl">
-              {title}
-            </h2>
-            <p className="mt-4 max-w-xl text-sm text-white/85 md:text-base">
-              {description}
-            </p>
-            <ul className="mt-6 flex flex-wrap gap-2">
-              {chips.map((chip) => (
-                <li
-                  key={chip}
-                  className="rounded-full border border-white/30 bg-white/10 px-3 py-1 text-xs font-medium text-white"
-                >
-                  {chip}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </Reveal>
+        <div className="relative mx-auto w-full max-w-5xl">
+          <p className="text-sm font-medium tracking-wide text-white/70 uppercase">
+            {eyebrow}
+          </p>
+          <h2 className="mt-2 max-w-xl text-2xl font-semibold text-white md:text-3xl">
+            {title}
+          </h2>
+          <p className="mt-4 max-w-xl text-sm text-white/85 md:text-base">
+            {description}
+          </p>
+          <ul className="mt-6 flex flex-wrap gap-2">
+            {chips.map((chip) => (
+              <li
+                key={chip}
+                className="rounded-full border border-white/30 bg-white/10 px-3 py-1 text-xs font-medium text-white"
+              >
+                {chip}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </section>
   );

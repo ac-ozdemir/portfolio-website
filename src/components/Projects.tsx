@@ -1,5 +1,4 @@
 import type { SVGProps } from "react";
-import Reveal from "@/components/Reveal";
 
 function IconProps(props: SVGProps<SVGSVGElement>) {
   return {
@@ -87,36 +86,34 @@ const projects = [
 export default function Projects() {
   return (
     <section id="projects" className="mx-auto max-w-5xl px-6 py-24">
-      <Reveal>
-        <h2 className="text-sm font-medium tracking-wide text-accent uppercase">
-          Projects
-        </h2>
+      <h2 className="text-sm font-medium tracking-wide text-accent uppercase">
+        Projects
+      </h2>
 
-        <div className="mt-8 grid gap-6 sm:grid-cols-2">
-          {projects.map(({ title, description, tags, Icon }) => (
-            <article
-              key={title}
-              className="rounded-lg border border-border p-6 transition-all hover:-translate-y-0.5 hover:border-accent hover:shadow-sm"
-            >
-              <span className="flex h-10 w-10 items-center justify-center rounded-md bg-accent/10 text-accent">
-                <Icon />
-              </span>
-              <h3 className="mt-4 font-semibold">{title}</h3>
-              <p className="mt-2 text-sm text-muted">{description}</p>
-              <ul className="mt-4 flex flex-wrap gap-2">
-                {tags.map((tag) => (
-                  <li
-                    key={tag}
-                    className="rounded-full bg-accent/10 px-3 py-1 text-xs font-medium text-accent"
-                  >
-                    {tag}
-                  </li>
-                ))}
-              </ul>
-            </article>
-          ))}
-        </div>
-      </Reveal>
+      <div className="mt-8 grid gap-6 sm:grid-cols-2">
+        {projects.map(({ title, description, tags, Icon }) => (
+          <article
+            key={title}
+            className="rounded-lg border border-border p-6 transition-[transform,border-color] hover:-translate-y-0.5 hover:border-accent"
+          >
+            <span className="flex h-10 w-10 items-center justify-center rounded-md bg-accent/10 text-accent">
+              <Icon />
+            </span>
+            <h3 className="mt-4 font-semibold">{title}</h3>
+            <p className="mt-2 text-sm text-muted">{description}</p>
+            <ul className="mt-4 flex flex-wrap gap-2">
+              {tags.map((tag) => (
+                <li
+                  key={tag}
+                  className="rounded-full bg-accent/10 px-3 py-1 text-xs font-medium text-accent"
+                >
+                  {tag}
+                </li>
+              ))}
+            </ul>
+          </article>
+        ))}
+      </div>
     </section>
   );
 }
