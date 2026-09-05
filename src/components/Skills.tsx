@@ -42,6 +42,10 @@ const groups = [
     label: "Other",
     items: ["Docker", "Claude Code", "AI-Assisted Analytics Workflows", "Jira"],
   },
+  {
+    label: "Certifications",
+    items: ["McKinsey Forward", "SSI Dive Master", "English C1 (iTEP)"],
+  },
 ];
 
 export default function Skills() {

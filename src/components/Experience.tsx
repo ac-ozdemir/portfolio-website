@@ -17,12 +17,6 @@ const timeline = [
     description:
       "GPA 3.54/4.0, High Honor. Erasmus+ exchange in Logistics & Supply Chain Management, University of Duisburg-Essen (Germany).",
   },
-  {
-    period: "Certifications",
-    title: "McKinsey Forward · SSI Dive Master · English C1 (iTEP)",
-    description:
-      "Continuous learning alongside full-time work, spanning business problem-solving, leadership under pressure, and language proficiency.",
-  },
 ];
 
 export default function Experience() {
