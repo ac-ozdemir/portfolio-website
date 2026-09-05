@@ -27,7 +27,7 @@ export default function Reveal({ children }: { children: ReactNode }) {
   return (
     <div
       ref={ref}
-      className={`transition-all duration-700 ease-out ${
+      className={`transition-[opacity,transform] duration-700 ease-out ${
         visible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
       }`}
     >
