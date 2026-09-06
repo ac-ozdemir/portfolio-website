@@ -26,7 +26,9 @@ export default function Home() {
           title="Leading underwater, and in the room"
           description="Three years on the board of Hacettepe University's Underwater Sports Club, the last as chairman. I organized dive trips and club events, assisted instructors in training new divers, and mentored the next generation of board members. As an SSI Divemaster — the highest rating I've reached, with 100+ logged dives — I lead certified divers on guided dives: reading conditions, keeping a group calm, and making the call when it matters."
           chips={["3 years on the board", "Chairman, final year", "100+ dives logged", "SSI Divemaster"]}
+          imageSrc="/diving-banner.jpg"
           imageAlt="Ahmet Can Özdemir scuba diving"
+          imagePosition="center 75%"
         />
         <FeatureBanner
           id="marathon"
@@ -34,6 +36,7 @@ export default function Home() {
           title="3:30 — exactly on target"
           description="At the 2025 Istanbul Marathon, I set a goal — a 3:30 finish — and hit it exactly. Running is where I practice the same discipline I bring to a messy dataset: set a target, build a plan, and execute against it. Not a one-off — I train and race year-round, chasing the next number."
           chips={["2025 Istanbul Marathon", "3:30 finish — goal hit exactly", "Races year-round"]}
+          imageSrc="/marathon-banner.jpg"
           imageAlt="Ahmet Can Özdemir running the Istanbul Marathon"
         />
         <Contact />

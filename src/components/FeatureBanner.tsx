@@ -8,6 +8,7 @@ type FeatureBannerProps = {
   chips: string[];
   imageSrc?: string;
   imageAlt: string;
+  imagePosition?: string;
 };
 
 export default function FeatureBanner({
@@ -18,6 +19,7 @@ export default function FeatureBanner({
   chips,
   imageSrc,
   imageAlt,
+  imagePosition = "center",
 }: FeatureBannerProps) {
   return (
     <section id={id} className="relative overflow-hidden">
@@ -30,14 +32,17 @@ export default function FeatureBanner({
               fill
               sizes="100vw"
               className="object-cover"
+              style={{ objectPosition: imagePosition }}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-black/10" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/55 to-black/15" />
           </>
         ) : (
           <div className="absolute inset-0 bg-foreground" aria-hidden="true" />
         )}
 
-        <div className="relative mx-auto w-full max-w-5xl">
+        <div
+          className="relative mx-auto w-full max-w-5xl [text-shadow:0_1px_12px_rgba(0,0,0,0.55)]"
+        >
           <p className="text-sm font-medium tracking-wide text-white/70 uppercase">
             {eyebrow}
           </p>
@@ -51,7 +56,7 @@ export default function FeatureBanner({
             {chips.map((chip) => (
               <li
                 key={chip}
-                className="rounded-full border border-white/30 bg-white/10 px-3 py-1 text-xs font-medium text-white"
+                className="rounded-full border border-white/25 bg-black/30 px-3 py-1 text-xs font-medium text-white [text-shadow:none]"
               >
                 {chip}
               </li>
