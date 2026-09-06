@@ -9,6 +9,7 @@ type FeatureBannerProps = {
   imageSrc?: string;
   imageAlt: string;
   imagePosition?: string;
+  blurDataURL?: string;
 };
 
 export default function FeatureBanner({
@@ -20,6 +21,7 @@ export default function FeatureBanner({
   imageSrc,
   imageAlt,
   imagePosition = "center",
+  blurDataURL,
 }: FeatureBannerProps) {
   return (
     <section id={id} className="relative overflow-hidden">
@@ -33,6 +35,8 @@ export default function FeatureBanner({
               sizes="100vw"
               className="object-cover"
               style={{ objectPosition: imagePosition }}
+              placeholder={blurDataURL ? "blur" : "empty"}
+              blurDataURL={blurDataURL}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/55 to-black/15" />
           </>
