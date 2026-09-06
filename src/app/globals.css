@@ -6,6 +6,11 @@
   --color-muted: #69655f;
   --color-accent: #2c6e8e;
   --color-border: #e5e1d8;
+  --color-deep: #0e3441;
+  --color-deep-foreground: #faf9f6;
+  --color-deep-muted: #a9cbd9;
+  --color-deep-accent: #8fc9de;
+  --color-deep-border: rgba(255, 255, 255, 0.15);
 }
 
 @theme inline {
@@ -14,6 +19,11 @@
   --color-muted: var(--color-muted);
   --color-accent: var(--color-accent);
   --color-border: var(--color-border);
+  --color-deep: var(--color-deep);
+  --color-deep-foreground: var(--color-deep-foreground);
+  --color-deep-muted: var(--color-deep-muted);
+  --color-deep-accent: var(--color-deep-accent);
+  --color-deep-border: var(--color-deep-border);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
