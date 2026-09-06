@@ -55,9 +55,12 @@ export default function Skills() {
         Skills
       </h2>
 
-      <div className="mt-8 space-y-6">
+      <div className="mt-8 grid gap-6 sm:grid-cols-2">
         {groups.map((group) => (
-          <div key={group.label}>
+          <div
+            key={group.label}
+            className="rounded-lg border border-border p-6"
+          >
             <p className="text-sm font-medium text-muted">{group.label}</p>
             <ul className="mt-3 flex flex-wrap gap-2">
               {group.items.map((item) => (
