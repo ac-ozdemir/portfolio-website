@@ -143,7 +143,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="order-1 relative mx-auto aspect-square w-full max-w-[260px] overflow-hidden rounded-2xl border border-border md:order-2 md:mx-0">
+        <div className="order-1 relative mx-auto aspect-square w-full max-w-[260px] overflow-hidden rounded-full border border-border md:order-2 md:mx-0">
           <Image
             src={profileImageSrc}
             alt={profileImageAlt}
