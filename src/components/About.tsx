@@ -20,7 +20,7 @@ export default function About() {
         <p>
           Outside of work, I lead from the front — three years on my
           university&apos;s diving club board (the last as chairman, now a
-          certified SSI Dive Master), and more recently on the road,
+          certified SSI Divemaster), and more recently on the road,
           finishing my first marathon at 26. More on both further down.
         </p>
         <p>

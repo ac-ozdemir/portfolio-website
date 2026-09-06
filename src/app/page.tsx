@@ -22,10 +22,10 @@ export default function Home() {
         <Projects />
         <FeatureBanner
           id="diving"
-          eyebrow="SSI Dive Master"
+          eyebrow="SSI Divemaster"
           title="Leading underwater, and in the room"
-          description="Three years on the board of Hacettepe University's Underwater Sports Club, the last as chairman. I organized dive trips and club events, assisted instructors in training new divers, and mentored the next generation of board members. As an SSI Dive Master — the highest rating I've reached, with 100+ logged dives — I lead certified divers on guided dives: reading conditions, keeping a group calm, and making the call when it matters."
-          chips={["3 years on the board", "Chairman, final year", "100+ dives logged", "SSI Dive Master"]}
+          description="Three years on the board of Hacettepe University's Underwater Sports Club, the last as chairman. I organized dive trips and club events, assisted instructors in training new divers, and mentored the next generation of board members. As an SSI Divemaster — the highest rating I've reached, with 100+ logged dives — I lead certified divers on guided dives: reading conditions, keeping a group calm, and making the call when it matters."
+          chips={["3 years on the board", "Chairman, final year", "100+ dives logged", "SSI Divemaster"]}
           imageAlt="Ahmet Can Özdemir scuba diving"
         />
         <FeatureBanner

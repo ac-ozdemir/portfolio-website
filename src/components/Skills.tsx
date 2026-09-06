@@ -44,7 +44,7 @@ const groups = [
   },
   {
     label: "Certifications",
-    items: ["McKinsey Forward", "SSI Dive Master", "English C1 (iTEP)"],
+    items: ["McKinsey Forward", "SSI Divemaster", "English C1 (iTEP)"],
   },
 ];
 
