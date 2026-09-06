@@ -21,30 +21,23 @@ const timeline = [
 
 export default function Experience() {
   return (
-    <section
-      id="experience"
-      className="bg-deep px-6 py-24 text-deep-foreground"
-    >
-      <div className="mx-auto max-w-5xl">
-        <h2 className="text-sm font-medium tracking-wide text-deep-accent uppercase">
-          Experience
-        </h2>
+    <section id="experience" className="mx-auto max-w-5xl px-6 py-24">
+      <h2 className="text-sm font-medium tracking-wide text-accent uppercase">
+        Experience
+      </h2>
 
-        <ol className="mt-8 space-y-10 border-l border-deep-border pl-8">
-          {timeline.map((item) => (
-            <li key={item.title} className="relative">
-              <span className="absolute top-1.5 -left-[calc(2rem+5px)] h-2.5 w-2.5 rounded-full bg-deep-accent" />
-              <p className="text-sm font-medium text-deep-muted">
-                {item.period}
-              </p>
-              <h3 className="mt-1 font-semibold">{item.title}</h3>
-              <p className="mt-2 max-w-2xl text-sm text-deep-foreground/80">
-                {item.description}
-              </p>
-            </li>
-          ))}
-        </ol>
-      </div>
+      <ol className="mt-8 space-y-10 border-l border-border pl-8">
+        {timeline.map((item) => (
+          <li key={item.title} className="relative">
+            <span className="absolute top-1.5 -left-[calc(2rem+5px)] h-2.5 w-2.5 rounded-full bg-accent" />
+            <p className="text-sm font-medium text-muted">{item.period}</p>
+            <h3 className="mt-1 font-semibold">{item.title}</h3>
+            <p className="mt-2 max-w-2xl text-sm text-foreground/80">
+              {item.description}
+            </p>
+          </li>
+        ))}
+      </ol>
     </section>
   );
 }
