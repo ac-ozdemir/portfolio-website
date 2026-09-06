@@ -42,10 +42,6 @@ const groups = [
     label: "Other",
     items: ["Docker", "Claude Code", "AI-Assisted Analytics Workflows", "Jira"],
   },
-  {
-    label: "Certifications",
-    items: ["McKinsey Forward", "SSI Divemaster", "English C1 (iTEP)"],
-  },
 ];
 
 export default function Skills() {
@@ -56,10 +52,14 @@ export default function Skills() {
       </h2>
 
       <div className="mt-8 grid gap-6 sm:grid-cols-2">
-        {groups.map((group) => (
+        {groups.map((group, i) => (
           <div
             key={group.label}
-            className="rounded-lg border border-border p-6"
+            className={`rounded-lg border border-border p-6 ${
+              i === groups.length - 1 && groups.length % 2 !== 0
+                ? "sm:col-span-2"
+                : ""
+            }`}
           >
             <p className="text-sm font-medium text-muted">{group.label}</p>
             <ul className="mt-3 flex flex-wrap gap-2">
