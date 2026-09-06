@@ -1,48 +1,99 @@
 import Image from "next/image";
+import type { SVGProps } from "react";
 
 const profileImageSrc = "/profile.jpg";
 const profileImageAlt = "Ahmet Can Özdemir";
+
+function IconProps(props: SVGProps<SVGSVGElement>) {
+  return {
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: 1.75,
+    strokeLinecap: "round" as const,
+    strokeLinejoin: "round" as const,
+    className: "h-5 w-5",
+    ...props,
+  };
+}
+
+function DivingIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...IconProps(props)}>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M8 13c1 1.5 2.3 2 4 2s3-.5 4-2" />
+      <circle cx="9" cy="10" r=".6" fill="currentColor" />
+      <circle cx="15" cy="10" r=".6" fill="currentColor" />
+    </svg>
+  );
+}
+
+function RunningIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...IconProps(props)}>
+      <path d="M3 12h4l2 5 4-14 2 9h6" />
+    </svg>
+  );
+}
 
 function StoryCard({
   href,
   title,
   hint,
-  imageSrc,
-  imageAlt,
+  Icon,
 }: {
   href: string;
   title: string;
   hint: string;
-  imageSrc: string;
-  imageAlt: string;
+  Icon: (props: SVGProps<SVGSVGElement>) => React.JSX.Element;
 }) {
   return (
     <a
       href={href}
-      className="group relative block aspect-square overflow-hidden rounded-lg border border-border focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+      className="group flex items-center gap-3 rounded-lg border border-border bg-background p-3 transition-all hover:-translate-y-0.5 hover:border-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
     >
-      <Image
-        src={imageSrc}
-        alt={imageAlt}
-        fill
-        sizes="(min-width: 768px) 140px, 45vw"
-        className="object-cover transition-transform duration-300 group-hover:scale-105"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
-      <div className="absolute inset-x-0 bottom-0 p-3">
-        <span className="block text-sm font-semibold text-white">
-          {title}
-        </span>
-        <span className="block text-xs text-white/80">{hint}</span>
-      </div>
+      <span className="flex h-9 w-9 flex-none items-center justify-center rounded-md bg-accent/10 text-accent">
+        <Icon />
+      </span>
+      <span className="min-w-0">
+        <span className="block text-sm font-semibold">{title}</span>
+        <span className="block truncate text-xs text-muted">{hint}</span>
+      </span>
+      <span
+        className="ml-auto text-muted transition-transform group-hover:translate-y-0.5"
+        aria-hidden="true"
+      >
+        ↓
+      </span>
     </a>
   );
 }
 
 export default function Hero() {
   return (
-    <section id="top" className="mx-auto max-w-5xl px-6 py-24 md:py-32">
-      <div className="grid gap-10 md:grid-cols-[1fr_260px] md:items-start">
+    <section
+      id="top"
+      className="relative mx-auto max-w-5xl overflow-hidden px-6 py-24 md:py-32"
+    >
+      <div
+        className="pointer-events-none absolute -top-32 -right-24 h-96 w-96 rounded-full opacity-70"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(44,110,142,0.14) 0%, rgba(44,110,142,0) 70%)",
+        }}
+        aria-hidden="true"
+      />
+      <div
+        className="pointer-events-none absolute -bottom-40 -left-24 h-80 w-80 rounded-full opacity-70"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(44,110,142,0.08) 0%, rgba(44,110,142,0) 70%)",
+        }}
+        aria-hidden="true"
+      />
+
+      <div className="relative grid gap-10 md:grid-cols-[1fr_260px] md:items-start">
         <div className="order-2 md:order-1">
           <p className="text-sm font-medium tracking-wide text-accent uppercase">
             Senior Data Analyst
@@ -80,15 +131,13 @@ export default function Hero() {
                 href="#diving"
                 title="Divemaster"
                 hint="Club chairman"
-                imageSrc="/diving-card.jpg"
-                imageAlt="Ahmet Can Özdemir scuba diving"
+                Icon={DivingIcon}
               />
               <StoryCard
                 href="#marathon"
                 title="Marathon"
                 hint="3:30, Istanbul"
-                imageSrc="/marathon-card.jpg"
-                imageAlt="Ahmet Can Özdemir after finishing the Istanbul Marathon"
+                Icon={RunningIcon}
               />
             </div>
           </div>
