@@ -8,7 +8,7 @@ export default function About() {
         <div className="mt-6 max-w-2xl space-y-4 text-lg text-deep-foreground/90">
           <p>
             I&apos;m an Industrial Engineering graduate (Hacettepe
-            University, High Honor) who found his footing in data. Before
+            University) who found his footing in data. Before
             graduating, I did a Work & Travel program in the US, followed by
             an Erasmus exchange in Logistics & Supply Chain Management at
             the University of Duisburg-Essen. I then joined Turkish

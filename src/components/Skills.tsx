@@ -20,7 +20,6 @@ const groups = [
       "BigQuery",
       "Stored Procedures",
       "Scheduled Jobs",
-      "Node-RED",
     ],
   },
   {
@@ -30,17 +29,23 @@ const groups = [
   {
     label: "Analytics Methods",
     items: [
+      "KPI Design",
+      "Data Modeling",
       "Root-Cause Analysis",
       "A/B Testing",
       "Statistical Analysis",
       "Trend & Variance Analysis",
-      "KPI Design",
-      "Data Modeling",
     ],
   },
   {
     label: "Other",
-    items: ["Docker", "Claude Code", "AI-Assisted Analytics Workflows", "Jira"],
+    items: [
+      "Docker",
+      "Node-RED",
+      "Claude Code",
+      "AI-Assisted Analytics Workflows",
+      "Jira",
+    ],
   },
 ];
 
