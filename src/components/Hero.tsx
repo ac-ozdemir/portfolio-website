@@ -21,10 +21,10 @@ function IconProps(props: SVGProps<SVGSVGElement>) {
 function DivingIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg {...IconProps(props)}>
-      <circle cx="12" cy="12" r="9" />
-      <path d="M8 13c1 1.5 2.3 2 4 2s3-.5 4-2" />
-      <circle cx="9" cy="10" r=".6" fill="currentColor" />
-      <circle cx="15" cy="10" r=".6" fill="currentColor" />
+      <path d="M3.5 16.5c1.4-1.4 2.8-1.4 4.2 0s2.8 1.4 4.2 0 2.8-1.4 4.2 0 2.8 1.4 4.2 0" />
+      <circle cx="10" cy="10.5" r="1" fill="currentColor" stroke="none" />
+      <circle cx="13.2" cy="7" r="1.3" fill="currentColor" stroke="none" />
+      <circle cx="15.5" cy="4" r="1.6" fill="currentColor" stroke="none" />
     </svg>
   );
 }
