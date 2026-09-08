@@ -23,10 +23,6 @@ const groups = [
     ],
   },
   {
-    label: "Cloud",
-    items: ["Azure Data Factory", "Azure SQL", "Snowflake", "AWS RDS"],
-  },
-  {
     label: "Analytics Methods",
     items: [
       "KPI Design",
