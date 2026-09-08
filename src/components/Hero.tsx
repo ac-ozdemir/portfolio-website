@@ -118,7 +118,7 @@ export default function Hero() {
               <StoryCard
                 href="#running"
                 title="Running"
-                hint="Sub 3:30"
+                hint="3:30 marathon"
                 Icon={RunningIcon}
               />
             </div>
