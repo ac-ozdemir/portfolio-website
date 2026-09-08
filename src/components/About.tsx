@@ -26,9 +26,9 @@ export default function About() {
             finishing my first marathon at 26. More on both further down.
           </p>
           <p>
-            I enjoy the moment where a messy dataset turns into a dashboard
-            someone actually uses to make a decision — and I&apos;m always
-            looking for the next problem like that to solve.
+            Turning messy data into a dashboard someone actually trusts
+            enough to act on — that&apos;s the part of the job I enjoy most,
+            and what I&apos;m always looking for next.
           </p>
         </div>
       </div>
