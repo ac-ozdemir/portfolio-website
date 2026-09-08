@@ -30,8 +30,8 @@ export default function Home() {
           id="diving"
           eyebrow="SSI Divemaster"
           title="Leading underwater, and in the room"
-          description="Three years on the board of Hacettepe University's Underwater Sports Club, the last as chairman. I organized dive trips and club events, assisted instructors in training new divers, and mentored the next generation of board members. As an SSI Divemaster with 100+ logged dives, I lead certified divers on guided dives — reading conditions, keeping the group calm, and making the call when it matters."
-          chips={["3 years on the board", "Chairman, final year", "100+ dives logged", "SSI Divemaster"]}
+          description="As an SSI Divemaster with 100+ logged dives, I lead certified divers on guided dives — reading conditions, keeping the group calm, and making the call when it matters. Three years on the board of Hacettepe University's Underwater Sports Club, the last as chairman. I organized dive trips and club events, assisted instructors in training new divers, and mentored the next generation of board members."
+          chips={["SSI Divemaster", "100+ dives logged", "3 years on the board", "Chairman, final year"]}
           imageSrc="/diving-banner.jpg"
           imageAlt="Ahmet Can Özdemir scuba diving"
           imagePosition="center 75%"

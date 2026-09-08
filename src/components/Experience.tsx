@@ -21,7 +21,7 @@ const timeline: TimelineEntry[] = [
   {
     period: "Education",
     title: "B.Sc. Industrial Engineering, Hacettepe University",
-    description: "GPA 3.54/4.0",
+    description: "GPA 3.54/4.0 (High Honour)",
     subDescription:
       "Erasmus+ exchange in Logistics & Supply Chain Management, University of Duisburg-Essen (Germany)",
   },
