@@ -12,7 +12,7 @@ import Footer from "@/components/Footer";
 const DIVING_BLUR =
   "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAMABADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDmLKcQzqz/AHR1p+pyLJPvQ5DAEGqOTT2cugz/AA8CutVm4OBl7Nc/Mf/Z";
 
-const MARATHON_BLUR =
+const RUNNING_BLUR =
   "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAJABADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwCu2qL5ZIiAI7HvVK51R3wqIYuRlsZzUd3/AK5vpVUU+ZvqLlXY/9k=";
 
 export default function Home() {
@@ -38,14 +38,14 @@ export default function Home() {
           blurDataURL={DIVING_BLUR}
         />
         <FeatureBanner
-          id="marathon"
-          eyebrow="Marathon"
-          title="3:30 — exactly on target"
-          description="At the 2025 Istanbul Marathon, I set a goal — a 3:30 finish — and hit it exactly. Running is where I practice the same discipline I bring to a messy dataset: set a target, build a plan, and execute against it. Not a one-off — I train and race year-round, chasing the next number."
-          chips={["2025 Istanbul Marathon", "3:30 finish — goal hit exactly", "Races year-round"]}
+          id="running"
+          eyebrow="Running"
+          title="My first marathon, at 26"
+          description="For now, running is about discipline as much as distance — I set specific goals for myself and train with real intent to hit them. Going into my first marathon, I set a target of 3:30 and hit it exactly. It's also turned into something close to a therapy session — the one part of my day where everything else goes quiet."
+          chips={["2025 Istanbul Marathon, Sub 3:30", "2026 Antalya Half Marathon, Sub 1:30"]}
           imageSrc="/marathon-banner.jpg"
           imageAlt="Ahmet Can Özdemir running the Istanbul Marathon"
-          blurDataURL={MARATHON_BLUR}
+          blurDataURL={RUNNING_BLUR}
         />
         <Contact />
       </main>

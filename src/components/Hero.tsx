@@ -116,9 +116,9 @@ export default function Hero() {
                 Icon={DivingIcon}
               />
               <StoryCard
-                href="#marathon"
-                title="Marathon"
-                hint="3:30, Istanbul"
+                href="#running"
+                title="Running"
+                hint="Sub 3:30"
                 Icon={RunningIcon}
               />
             </div>
