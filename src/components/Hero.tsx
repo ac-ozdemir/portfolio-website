@@ -1,7 +1,7 @@
 import Image from "next/image";
 import type { SVGProps } from "react";
 
-const profileImageSrc = "/profile.jpg";
+const profileImageSrc = "/headshot.jpg";
 const profileImageAlt = "Ahmet Can Özdemir";
 
 function IconProps(props: SVGProps<SVGSVGElement>) {
@@ -74,26 +74,9 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative mx-auto max-w-5xl overflow-hidden px-6 py-24 md:py-32"
+      className="mx-auto max-w-5xl px-6 py-24 md:py-32"
     >
-      <div
-        className="pointer-events-none absolute -top-32 -right-24 h-96 w-96 rounded-full opacity-70"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(44,110,142,0.14) 0%, rgba(44,110,142,0) 70%)",
-        }}
-        aria-hidden="true"
-      />
-      <div
-        className="pointer-events-none absolute -bottom-40 -left-24 h-80 w-80 rounded-full opacity-70"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(44,110,142,0.08) 0%, rgba(44,110,142,0) 70%)",
-        }}
-        aria-hidden="true"
-      />
-
-      <div className="relative grid gap-10 md:grid-cols-[1fr_260px] md:items-start">
+      <div className="grid gap-10 md:grid-cols-[1fr_260px] md:items-start">
         <div className="order-2 md:order-1">
           <p className="text-sm font-medium tracking-wide text-accent uppercase">
             Senior Data Analyst
