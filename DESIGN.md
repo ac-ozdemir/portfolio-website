@@ -11,6 +11,9 @@ colors:
   deep-mist: "#a9cbd9"
   light-petrol: "#8fc9de"
   deep-rule: "rgba(255, 255, 255, 0.15)"
+  data-petrol: "#16709c"
+  data-ember: "#c0672b"
+  data-stone: "#8f897f"
 typography:
   display:
     fontFamily: "Geist, system-ui, sans-serif"
@@ -132,9 +135,24 @@ exists for one contrasting band.
 - **Light Petrol** (#8fc9de): Accent on Deep Petrol.
 - **Deep Rule** (rgba(255, 255, 255, 0.15)): Borders on Deep Petrol.
 
+### Data palette (charts only)
+Added 2026-10-04 for the Training Performance Dashboard; validated for colour-blind separation
+(protan ΔE 17.5, tritan 26.3) and ≥3:1 contrast on Warm Paper.
+- **Data Petrol** (#16709c): the primary series (running, fitness/CTL, race VDOT). A slightly more
+  saturated step of Petrol Blue so filled bars don't read as grey.
+- **Data Ember** (#c0672b): the single warm contrast (CrossFit, fatigue/ATL, interval VDOT).
+- **Data Stone** (#8f897f): "Other" and other low-priority remainders.
+- Totals and form (TSB) lines use Warm Charcoal / Deep Petrol; zone bands are 4–10% tints of the
+  data colours, labelled in Muted Stone.
+
+**The Data Colour Rule.** These colours live only inside charts and their legends. Colour follows
+the entity (running is always Data Petrol), never its rank; text, values and axes stay in text
+colours; a second encoding (shape, label or legend) always backs colour up.
+
 ### Named Rules
 **The One Accent Rule.** Petrol Blue is the only accent color. It marks interaction and emphasis, never
-fills large areas; tints are 10% opacity at most.
+fills large areas; tints are 10% opacity at most. The data palette is the one sanctioned exception, and
+only inside charts.
 
 ## Typography
 
@@ -235,4 +253,6 @@ nav targets at 0.25rem. Fully rounded shapes are reserved for tags/chips and the
 - **Don't** introduce a second accent color; the alternative teal (#0f766e) is only tried if Ahmet asks.
 - **Don't** add a dark theme; the Deep Petrol band is the only inverted surface.
 - **Don't** use gradients outside photo overlays.
-- **Don't** animate beyond the two-pixel hover lift and color transitions.
+- **Don't** animate beyond the two-pixel hover lift and color transitions. Charts render without
+  entrance animation.
+- **Don't** use dual-axis charts; two scales get two panels on a shared time axis.

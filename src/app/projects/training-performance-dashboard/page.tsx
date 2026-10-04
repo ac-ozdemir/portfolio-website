@@ -12,6 +12,7 @@ import CaseStudy from "@/components/training/CaseStudy";
 import { hoursSince, summarize } from "@/lib/training/derive";
 import { formatTimestamp } from "@/lib/training/format";
 import { loadDashboard } from "@/lib/training/load";
+import { buildChartData } from "@/lib/training/weekly";
 
 // Keep in sync with REVALIDATE_SECONDS in lib/training/load.ts (must be a literal).
 export const revalidate = 3600;
@@ -60,7 +61,12 @@ export default async function TrainingDashboardPage() {
           <ProjectLinks />
         </div>
 
-        {summary && <DashboardSection loadSeriesStart={summary.loadSeriesStart} />}
+        {result.ok && summary && (
+          <DashboardSection
+            chartData={buildChartData(result.data)}
+            loadSeriesStart={summary.loadSeriesStart}
+          />
+        )}
         <CaseStudy />
       </main>
       <Footer />

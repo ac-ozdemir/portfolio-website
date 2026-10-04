@@ -1,8 +1,13 @@
 import { formatDay } from "@/lib/training/format";
+import type { ChartData } from "@/lib/training/weekly";
+
+import TrainingDashboard from "./TrainingDashboard";
 
 export default function DashboardSection({
+  chartData,
   loadSeriesStart,
 }: {
+  chartData: ChartData;
   loadSeriesStart: string | null;
 }) {
   return (
@@ -18,12 +23,9 @@ export default function DashboardSection({
         Dashboard
       </h2>
 
-      {/* Charts and filters are the next build step (Recharts). */}
-      <div className="mt-6 flex h-72 items-center justify-center rounded-lg border border-dashed border-border text-sm text-muted">
-        Charts are being added.
-      </div>
+      <TrainingDashboard data={chartData} />
 
-      <ul className="mt-6 max-w-2xl space-y-1 text-sm text-muted">
+      <ul className="mt-12 max-w-2xl space-y-1 text-sm text-muted">
         {loadSeriesStart && (
           <li>
             Training load starts on {formatDay(loadSeriesStart)}, when

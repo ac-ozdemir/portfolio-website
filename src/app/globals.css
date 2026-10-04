@@ -11,6 +11,12 @@
   --color-deep-muted: #a9cbd9;
   --color-deep-accent: #8fc9de;
   --color-deep-border: rgba(255, 255, 255, 0.15);
+  /* Data palette: validated for colour-blind separation and 3:1 contrast on
+     warm paper. Petrol is a slightly more saturated step of the accent so
+     filled marks don't read as grey. */
+  --color-data-run: #16709c;
+  --color-data-crossfit: #c0672b;
+  --color-data-other: #8f897f;
 }
 
 @theme inline {
@@ -24,6 +30,9 @@
   --color-deep-muted: var(--color-deep-muted);
   --color-deep-accent: var(--color-deep-accent);
   --color-deep-border: var(--color-deep-border);
+  --color-data-run: var(--color-data-run);
+  --color-data-crossfit: var(--color-data-crossfit);
+  --color-data-other: var(--color-data-other);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -42,4 +51,20 @@ body {
   background: var(--color-background);
   color: var(--color-foreground);
   font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+/* Charts: aligned numerals, and a visible focus ring when the keyboard
+   layer focuses a chart. */
+.recharts-wrapper text {
+  font-variant-numeric: tabular-nums;
+}
+
+.recharts-surface:focus {
+  outline: none;
+}
+
+.recharts-surface:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+  border-radius: 0.25rem;
 }
