@@ -22,7 +22,7 @@ export default function TrainingDashboard({ data }: { data: ChartData }) {
   const form = start ? data.form.filter((point) => point.date >= start) : data.form;
 
   return (
-    <div className="mt-6">
+    <div className="mt-12">
       <Filters
         period={period}
         activity={activity}

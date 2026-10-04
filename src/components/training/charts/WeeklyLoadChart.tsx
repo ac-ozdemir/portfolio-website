@@ -58,7 +58,11 @@ export default function WeeklyLoadChart({
   return (
     <ChartFrame
       title="Weekly training load"
-      note={series.length > 1 ? "TRIMP per week, stacked by activity" : `TRIMP per week, ${series[0].label.toLowerCase()} only`}
+      note={
+        series.length > 1
+          ? "Training load (TRIMP) per week, stacked by activity"
+          : `Training load (TRIMP) per week, ${series[0].label.toLowerCase()} only`
+      }
       legend={legend}
       summary={summary}
       empty={hasLoad ? undefined : "No training load for this activity in the selected period."}

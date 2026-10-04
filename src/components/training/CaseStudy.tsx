@@ -1,4 +1,4 @@
-// Draft copy; the full case study is written in Faz 3 after validation.
+// Approved by Ahmet (2026-10-04); expanded in Faz 3 after the metrics are validated.
 const sections = [
   {
     title: "The problem",

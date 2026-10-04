@@ -1,6 +1,8 @@
 import { formatDay } from "@/lib/training/format";
 import type { ChartData } from "@/lib/training/weekly";
 
+import MetricGlossary from "./MetricGlossary";
+import StravaAttribution from "./StravaAttribution";
 import TrainingDashboard from "./TrainingDashboard";
 
 export default function DashboardSection({
@@ -23,6 +25,7 @@ export default function DashboardSection({
         Dashboard
       </h2>
 
+      <MetricGlossary />
       <TrainingDashboard data={chartData} />
 
       <ul className="mt-12 max-w-2xl space-y-1 text-sm text-muted">
@@ -35,14 +38,9 @@ export default function DashboardSection({
         <li>Activities recorded without heart rate count as zero load.</li>
       </ul>
 
-      <p className="mt-6 text-sm text-muted">
-        <a
-          href="https://www.strava.com"
-          className="rounded-sm font-medium text-foreground underline-offset-2 hover:text-accent hover:underline focus-visible:outline-2 focus-visible:outline-accent"
-        >
-          Powered by Strava
-        </a>
-      </p>
+      <div className="mt-8">
+        <StravaAttribution />
+      </div>
     </section>
   );
 }
