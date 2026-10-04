@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { SVGProps } from "react";
 
 function IconProps(props: SVGProps<SVGSVGElement>) {
@@ -52,7 +53,29 @@ function CodeIcon(props: SVGProps<SVGSVGElement>) {
   );
 }
 
-const projects = [
+function ActivityIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...IconProps(props)}>
+      <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+    </svg>
+  );
+}
+
+const projects: {
+  title: string;
+  description: string;
+  tags: string[];
+  Icon: (props: SVGProps<SVGSVGElement>) => React.JSX.Element;
+  href?: string;
+}[] = [
+  {
+    title: "Training Performance Dashboard",
+    description:
+      "A live dashboard of my own training data. A nightly Google Cloud pipeline turns Strava activities into training load, fitness and VDOT in BigQuery.",
+    tags: ["Python", "BigQuery", "Google Cloud", "Next.js"],
+    Icon: ActivityIcon,
+    href: "/projects/training-performance-dashboard",
+  },
   {
     title: "Real-Time Operational Performance Dashboard",
     description:
@@ -91,15 +114,26 @@ export default function Projects() {
       </h2>
 
       <div className="mt-8 grid gap-6 sm:grid-cols-2">
-        {projects.map(({ title, description, tags, Icon }) => (
+        {projects.map(({ title, description, tags, Icon, href }) => (
           <article
             key={title}
-            className="rounded-lg border border-border p-6 transition-[transform,border-color] hover:-translate-y-0.5 hover:border-accent"
+            className="relative rounded-lg border border-border p-6 transition-[transform,border-color] hover:-translate-y-0.5 hover:border-accent has-[a:focus-visible]:border-accent has-[a:focus-visible]:outline-2 has-[a:focus-visible]:outline-offset-2 has-[a:focus-visible]:outline-accent"
           >
             <span className="flex h-10 w-10 items-center justify-center rounded-md bg-accent/10 text-accent">
               <Icon />
             </span>
-            <h3 className="mt-4 font-semibold">{title}</h3>
+            <h3 className="mt-4 font-semibold">
+              {href ? (
+                <Link
+                  href={href}
+                  className="after:absolute after:inset-0 after:rounded-lg focus-visible:outline-none"
+                >
+                  {title}
+                </Link>
+              ) : (
+                title
+              )}
+            </h3>
             <p className="mt-2 text-sm text-muted">{description}</p>
             <ul className="mt-4 flex flex-wrap gap-2">
               {tags.map((tag) => (
@@ -111,6 +145,18 @@ export default function Projects() {
                 </li>
               ))}
             </ul>
+            {href && (
+              <p
+                className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-accent"
+                aria-hidden="true"
+              >
+                Live dashboard and case study
+                <svg {...IconProps({ className: "h-4 w-4" })}>
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </p>
+            )}
           </article>
         ))}
       </div>

@@ -39,10 +39,11 @@ warm contrast. No shadows, no gradients, no nested cards.
 STORY: The visitor understands it is real and live, believes it is built end to end (architecture strip,
 GitHub), then reads the case study or opens the code.
 
-FIRST VIEWPORT: Small uppercase petrol "PROJECT" label, page title, one-sentence lead. Below it a
-four-cell indicator band framed by hairlines: Form (TSB) with its zone, Fitness (CTL), latest VDOT with
-its source, last update in mono. Under the band the architecture strip Strava → Cloud Functions →
-BigQuery → This page, and an outline GitHub button. On mobile the band becomes 2×2.
+FIRST VIEWPORT: An "All projects" back link (no eyebrow label), page title, one-sentence lead. Directly
+below, a four-cell indicator band framed by hairlines: Form (TSB) with its zone, Fitness (CTL), latest
+VDOT with its source, last update in mono. Under the band the architecture strip Strava → Cloud Functions
+→ BigQuery → This page, then tool chips and outline buttons (View the code, Read the case study). On
+mobile the band becomes 2×2 and all four numbers sit in the first screen.
 
 SIGNATURE: Shaded TSB zones behind the Form & Fitness chart (chart step). Motion grammar: colour
 transitions and the 2px card lift only.

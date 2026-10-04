@@ -1,13 +1,14 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 
 const links = [
-  { href: "#about", label: "About" },
-  { href: "#experience", label: "Experience" },
-  { href: "#skills", label: "Skills" },
-  { href: "#projects", label: "Projects" },
-  { href: "#contact", label: "Contact" },
+  { href: "/#about", label: "About" },
+  { href: "/#experience", label: "Experience" },
+  { href: "/#skills", label: "Skills" },
+  { href: "/#projects", label: "Projects" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export default function Navbar() {
@@ -16,22 +17,22 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background">
       <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-        <a
-          href="#top"
+        <Link
+          href="/#top"
           className="rounded-sm font-semibold tracking-tight focus-visible:outline-2 focus-visible:outline-accent"
         >
           Ahmet Can Özdemir
-        </a>
+        </Link>
 
         <ul className="hidden gap-8 text-sm md:flex">
           {links.map((link) => (
             <li key={link.href}>
-              <a
+              <Link
                 href={link.href}
                 className="rounded-sm text-foreground/80 transition-colors hover:text-accent focus-visible:outline-2 focus-visible:outline-accent"
               >
                 {link.label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
@@ -64,13 +65,13 @@ export default function Navbar() {
         >
           {links.map((link) => (
             <li key={link.href}>
-              <a
+              <Link
                 href={link.href}
                 onClick={() => setOpen(false)}
                 className="text-foreground/80 hover:text-accent"
               >
                 {link.label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>

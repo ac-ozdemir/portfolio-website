@@ -34,3 +34,15 @@ export function formatTimestamp(iso: string): string {
     timeZone: "Europe/Istanbul",
   }).format(new Date(iso));
 }
+
+/** "4 Oct, 20:52" in Istanbul time; the short form for the indicator band. */
+export function formatShortTimestamp(iso: string): string {
+  return new Intl.DateTimeFormat("en-GB", {
+    day: "numeric",
+    month: "short",
+    hour: "2-digit",
+    minute: "2-digit",
+    hourCycle: "h23",
+    timeZone: "Europe/Istanbul",
+  }).format(new Date(iso));
+}
