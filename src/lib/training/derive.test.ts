@@ -88,3 +88,15 @@ describe("summarize", () => {
     expect(summary.loadSeriesStart).toBe("2025-11-01");
   });
 });
+
+describe("formatPace", async () => {
+  const { formatPace } = await import("./format");
+  it.each([
+    [5, "5:00"],
+    [5.4, "5:24"],
+    [4.999, "5:00"],
+    [6.72, "6:43"],
+  ])("formats %d as %s", (value, text) => {
+    expect(formatPace(value)).toBe(text);
+  });
+});

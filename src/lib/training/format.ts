@@ -46,3 +46,20 @@ export function formatShortTimestamp(iso: string): string {
     timeZone: "Europe/Istanbul",
   }).format(new Date(iso));
 }
+
+/** Minutes per km as "5:24". */
+export function formatPace(minutesPerKm: number): string {
+  const totalSeconds = Math.round(minutesPerKm * 60);
+  const minutes = Math.floor(totalSeconds / 60);
+  return `${minutes}:${String(totalSeconds % 60).padStart(2, "0")}`;
+}
+
+/** Axis tick: "6 Oct" for short ranges, "Oct 25" when the range spans years. */
+export function formatTick(date: string, long: boolean): string {
+  return new Intl.DateTimeFormat(
+    "en-GB",
+    long
+      ? { month: "short", year: "2-digit", timeZone: "UTC" }
+      : { day: "numeric", month: "short", timeZone: "UTC" },
+  ).format(new Date(`${date}T00:00:00Z`));
+}

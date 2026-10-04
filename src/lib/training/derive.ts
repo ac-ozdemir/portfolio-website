@@ -13,10 +13,12 @@ export const TSB_ZONE_LABELS: Record<TsbZone, string> = {
 };
 
 /** Zone boundaries approved in the page plan (2026-10-04). */
+export const TSB_BOUNDS = { fatigued: -30, optimal: -10, fresh: 5 } as const;
+
 export function tsbZone(tsb: number): TsbZone {
-  if (tsb < -30) return "fatigued";
-  if (tsb < -10) return "optimal";
-  if (tsb <= 5) return "neutral";
+  if (tsb < TSB_BOUNDS.fatigued) return "fatigued";
+  if (tsb < TSB_BOUNDS.optimal) return "optimal";
+  if (tsb <= TSB_BOUNDS.fresh) return "neutral";
   return "fresh";
 }
 
