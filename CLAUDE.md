@@ -8,7 +8,8 @@ sürecini desteklemek için hazırlanan bir portfolyo web sitesidir. Site:
 - İleride başka side project'lerin (örn. Garmin/Strava verisiyle spor koçluğu projesi) sergileneceği bir zemin olacak.
 
 Hedef kitle: teknoloji, e-ticaret, bankacılık/fintek sektörlerindeki işe alım uzmanları ve hiring manager'lar
-(çoğunlukla İngilizce okuyacaklar — site içeriği İngilizce olmalı).
+— global (remote öncelikli) ve Türkiye'deki tech şirketleri (2026-10-04 güncellemesi). Çoğunlukla İngilizce
+okuyacaklar — site içeriği İngilizce olmalı.
 
 ## Çalışma Modeli (ÖNEMLİ)
 Claude bu projede geliştirici + tasarımcı + proje yöneticisi rolünü üstlenir:
@@ -51,6 +52,16 @@ Claude bu projede geliştirici + tasarımcı + proje yöneticisi rolünü üstle
 - Referans ilham sitesi: joaofcalmeida.pt — sabit üst menü, sayılarla özet bant, zaman çizelgesi
   formatında deneyim, kart/grid projeler bölümü gibi yapısal fikirler oradan alındı (akademik
   "publications" gibi kısımlar hariç, kullanıcının profiline uyarlanacak)
+
+## Tasarım Aracı: Impeccable (2026-10-04)
+- Proje bazında kurulu (sadece Claude Code, hook'lu). Yeni makinede/klonda:
+  `npx impeccable install --providers=claude --project`. Kurulan araç dosyaları gitignore'da; sadece
+  çıktıları commit'lenir
+- `PRODUCT.md` (ürün gerçekleri) ve `DESIGN.md` (mevcut görsel sistem) tasarım bağlamıdır — UI işinden
+  önce okunur. Mevcut tasarım korunur: refinement, redesign değil
+- Kullanılan komutlar: `document`, `init`, `shape`, `audit`, `polish` + otomatik denetleyici. Animasyon/
+  "wow" komutları (`animate`, `delight`, `overdrive`, `bolder`) bilinçli olarak kullanılmıyor
+- Mod eşlemesi: ana sayfa Persuade, Training Performance Dashboard bölümü Operate, case study metni Read
 
 ## SEO ve Paylaşım
 - Her sayfada temel meta etiketler (title, description) bulunmalı

@@ -38,4 +38,15 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+
+# Impeccable: the installed tool is reinstalled with
+# `npx impeccable install --providers=claude --project`; only its outputs
+# (PRODUCT.md, DESIGN.md, .impeccable/ config and briefs) are committed
+/.claude/settings.local.json
+/.claude/skills/impeccable/
+/.claude/agents/impeccable-*.md
+/.impeccable/config.local.json
+/.impeccable/live/
+/.impeccable/review/
+/.impeccable/**/*.png
 next-env.d.ts
