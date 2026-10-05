@@ -48,7 +48,7 @@ export default function ChartFrame({
       <div className="flex flex-wrap items-start justify-between gap-x-6 gap-y-2">
         <div>
           <h3 className="font-semibold">{title}</h3>
-          <p className="mt-0.5 max-w-[65ch] text-sm text-muted">{note}</p>
+          <p className="mt-0.5 max-w-[52ch] text-sm text-muted">{note}</p>
         </div>
         {legend && !empty && (
           <ul className="flex flex-wrap gap-x-4 gap-y-1 text-sm text-muted">
