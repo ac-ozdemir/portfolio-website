@@ -1,0 +1,14 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "geist",
+        "createdAt": "2026-10-04T20:35:43.793Z",
+        "reason": "Geist is the committed site typeface in DESIGN.md (Warm Precision); not a default pick."
+      }
+    ]
+  }
+}

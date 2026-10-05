@@ -59,6 +59,14 @@ export default function VdotChart({ points }: { points: VdotPoint[] }) {
     Math.max(...times) + PADDING_MS,
   ];
 
+  const values = plotted.map((point) => point.vdot!);
+  const vdotLow = Math.floor((Math.min(...values) - 1) / 2) * 2;
+  const vdotHigh = Math.ceil((Math.max(...values) + 1) / 2) * 2;
+  const vdotTicks = Array.from(
+    { length: (vdotHigh - vdotLow) / 2 + 1 },
+    (_, i) => vdotLow + i * 2,
+  );
+
   const summary = plotted
     .map((point) => `${describe(point)}, ${formatDay(point.date)}: VDOT ${formatOneDecimal(point.vdot!)}`)
     .join(". ");
@@ -74,7 +82,11 @@ export default function VdotChart({ points }: { points: VdotPoint[] }) {
       summary={summary}
       empty={plotted.length ? undefined : "No races or qualifying interval sessions yet."}
     >
-      <ScatterChart responsive margin={{ ...chartMargin, right: 16 }} style={{ width: "100%", height: 220 }}>
+      <ScatterChart
+        responsive
+        title="VDOT history, races and interval sessions. Use the arrow keys to read each point."
+        desc={summary}
+        margin={{ ...chartMargin, right: 16 }} style={{ width: "100%", height: 220 }}>
         <CartesianGrid {...gridProps} />
         <XAxis
           {...xAxisProps}
@@ -85,7 +97,13 @@ export default function VdotChart({ points }: { points: VdotPoint[] }) {
           ticks={plotted.length ? quarterTicks(...domain) : undefined}
           tickFormatter={(time: number) => formatTick(new Date(time).toISOString().slice(0, 10), true)}
         />
-        <YAxis {...yAxisProps} dataKey="vdot" type="number" domain={["dataMin - 2", "dataMax + 2"]} allowDecimals={false} />
+        <YAxis
+          {...yAxisProps}
+          dataKey="vdot"
+          type="number"
+          domain={[vdotLow, vdotHigh]}
+          ticks={plotted.length ? vdotTicks : undefined}
+        />
         <Tooltip
           cursor={false}
           isAnimationActive={false}

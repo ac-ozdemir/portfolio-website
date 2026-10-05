@@ -39,7 +39,7 @@ function Segmented<T extends string>({
         {options.map((option) => (
           <label
             key={option.value}
-            className="cursor-pointer rounded px-3 py-1.5 text-sm text-foreground/80 transition-colors hover:text-accent has-checked:bg-accent/10 has-checked:font-medium has-checked:text-accent has-focus-visible:outline-2 has-focus-visible:outline-accent"
+            className="min-w-11 cursor-pointer rounded px-3 py-1.5 text-center text-sm pointer-coarse:py-3 text-foreground/80 transition-colors hover:text-accent has-checked:bg-accent/10 has-checked:font-medium has-checked:text-accent has-focus-visible:outline-2 has-focus-visible:outline-accent"
           >
             <input
               type="radio"

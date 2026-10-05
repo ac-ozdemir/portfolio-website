@@ -1,7 +1,8 @@
 // Approved by Ahmet (2026-10-04); expanded in Faz 3 after the metrics are validated.
 const sections = [
   {
-    title: "The problem",
+    // Opens the section directly under its label, so it carries no heading.
+    title: null,
     body: "Strava and Garmin show single workouts well, but not how training load builds up across running and CrossFit, or whether I’m actually getting fitter. I wanted one view that answers both, built the way I’d build it at work.",
   },
   {
@@ -35,11 +36,13 @@ export default function CaseStudy() {
       >
         Case study
       </h2>
-      <div className="mt-8 max-w-2xl space-y-10">
+      <div className="mt-8 max-w-[58ch] space-y-10">
         {sections.map(({ title, body }) => (
-          <article key={title}>
-            <h3 className="text-2xl font-semibold tracking-tight">{title}</h3>
-            <p className="mt-3 leading-7 text-foreground/90">{body}</p>
+          <article key={title ?? "intro"}>
+            {title && (
+              <h3 className="mb-3 text-2xl font-semibold tracking-tight">{title}</h3>
+            )}
+            <p className="leading-7 text-foreground/90">{body}</p>
           </article>
         ))}
       </div>

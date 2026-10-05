@@ -7,7 +7,14 @@ import type { WeekPoint } from "@/lib/training/weekly";
 
 import ChartFrame from "./ChartFrame";
 import ChartTooltip from "./ChartTooltip";
-import { COLORS, barCursor, chartMargin, gridProps, xAxisProps, yAxisProps } from "./chartStyle";
+import {
+  COLORS,
+  barCursor,
+  chartMargin,
+  gridProps,
+  xAxisProps,
+  yAxisProps,
+} from "./chartStyle";
 
 export default function DistanceChart({ weeks }: { weeks: WeekPoint[] }) {
   const totalKm = weeks.reduce((sum, week) => sum + week.runKm, 0);
@@ -25,12 +32,18 @@ export default function DistanceChart({ weeks }: { weeks: WeekPoint[] }) {
     >
       <BarChart
         responsive
+        title="Weekly running distance. Use the arrow keys to read values week by week."
+        desc={summary}
         data={weeks}
         margin={chartMargin}
         style={{ width: "100%", height: 220 }}
       >
         <CartesianGrid {...gridProps} />
-        <XAxis {...xAxisProps} dataKey="week" tickFormatter={(week: string) => formatTick(week, long)} />
+        <XAxis
+          {...xAxisProps}
+          dataKey="week"
+          tickFormatter={(week: string) => formatTick(week, long)}
+        />
         <YAxis {...yAxisProps} unit=" km" width={52} />
         <Tooltip
           cursor={barCursor}

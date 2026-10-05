@@ -8,7 +8,14 @@ import type { WeekPoint } from "@/lib/training/weekly";
 import ChartFrame, { type LegendItem } from "./ChartFrame";
 import ChartTooltip from "./ChartTooltip";
 import type { ActivityFilter } from "./Filters";
-import { COLORS, barCursor, chartMargin, gridProps, xAxisProps, yAxisProps } from "./chartStyle";
+import {
+  COLORS,
+  barCursor,
+  chartMargin,
+  gridProps,
+  xAxisProps,
+  yAxisProps,
+} from "./chartStyle";
 
 type LoadKey = "trimpRun" | "trimpCrossfit" | "trimpOther";
 
@@ -69,12 +76,18 @@ export default function WeeklyLoadChart({
     >
       <BarChart
         responsive
+        title="Weekly training load. Use the arrow keys to read values week by week."
+        desc={summary}
         data={data}
         margin={chartMargin}
         style={{ width: "100%", height: 220 }}
       >
         <CartesianGrid {...gridProps} />
-        <XAxis {...xAxisProps} dataKey="week" tickFormatter={(week: string) => formatTick(week, long)} />
+        <XAxis
+          {...xAxisProps}
+          dataKey="week"
+          tickFormatter={(week: string) => formatTick(week, long)}
+        />
         <YAxis {...yAxisProps} />
         <Tooltip
           cursor={barCursor}

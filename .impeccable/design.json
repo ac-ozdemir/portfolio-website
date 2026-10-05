@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-04T19:19:08.515271+00:00",
+  "generatedAt": "2026-10-04T21:16:34.998432+00:00",
   "title": "Design System: Ahmet Can Özdemir — Portfolio",
   "extensions": {
     "colorMeta": {
@@ -123,6 +123,51 @@
           "#99d3e9",
           "#d8f4fe"
         ]
+      },
+      "data-petrol": {
+        "role": "tertiary",
+        "displayName": "Data Petrol",
+        "canonical": "#16709c",
+        "tonalRamp": [
+          "#000d17",
+          "#01293d",
+          "#024867",
+          "#076994",
+          "#398bb9",
+          "#5fafde",
+          "#8cd3ff",
+          "#def2ff"
+        ]
+      },
+      "data-ember": {
+        "role": "tertiary",
+        "displayName": "Data Ember",
+        "canonical": "#c0672b",
+        "tonalRamp": [
+          "#180600",
+          "#3e1900",
+          "#6a2f00",
+          "#984701",
+          "#c0672b",
+          "#e78a51",
+          "#feb78e",
+          "#ffeade"
+        ]
+      },
+      "data-stone": {
+        "role": "tertiary",
+        "displayName": "Data Stone",
+        "canonical": "#8f897f",
+        "tonalRamp": [
+          "#0f0a04",
+          "#29241c",
+          "#474138",
+          "#666057",
+          "#878178",
+          "#aaa49a",
+          "#cfc8be",
+          "#f4eee3"
+        ]
       }
     },
     "typographyMeta": {
@@ -172,6 +217,11 @@
         "name": "color-transition",
         "value": "150ms",
         "purpose": "Border and text color changes on hover."
+      },
+      {
+        "name": "chart-entrance",
+        "value": "none",
+        "purpose": "Charts render without entrance animation (Recharts isAnimationActive off on every series and tooltip)."
       }
     ],
     "breakpoints": [
@@ -182,6 +232,18 @@
       {
         "name": "md",
         "value": "768px"
+      }
+    ],
+    "focusRings": [
+      {
+        "name": "focus-default",
+        "value": "outline: 2px solid var(--color-accent); outline-offset: 2px",
+        "purpose": "Every link, button and filter option."
+      },
+      {
+        "name": "focus-chart",
+        "value": "outline: 2px solid var(--color-accent); outline-offset: 4px; border-radius: 0.25rem",
+        "purpose": "Chart surface when the keyboard layer focuses it."
       }
     ]
   },
@@ -241,6 +303,14 @@
       "description": "Headline number in petrol with a muted label underneath.",
       "html": "<div class=\"ds-stat\"><p class=\"ds-stat-value\">75+</p><p class=\"ds-stat-label\">Dashboards &amp; Reports Shipped</p></div>",
       "css": ".ds-stat-value { margin: 0; font-size: 1.875rem; font-weight: 600; color: var(--color-accent); } .ds-stat-label { margin: 0.25rem 0 0; font-size: 0.875rem; color: var(--color-muted); }"
+    },
+    {
+      "name": "Chart Legend",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Muted legend above a chart: data colour always paired with a shape (line, square, dot, ring) and a text label.",
+      "html": "<ul class=\"ds-legend\"><li><span class=\"ds-sw ds-sw-sq\" style=\"background:var(--color-data-run)\"></span>Running</li><li><span class=\"ds-sw ds-sw-sq\" style=\"background:var(--color-data-crossfit)\"></span>CrossFit</li><li><span class=\"ds-sw ds-sw-sq\" style=\"background:var(--color-data-other)\"></span>Other</li><li><span class=\"ds-sw ds-sw-ring\" style=\"border-color:var(--color-data-crossfit)\"></span>Interval session</li></ul>",
+      "css": ".ds-legend { display: flex; flex-wrap: wrap; gap: 0.25rem 1rem; margin: 0; padding: 0; list-style: none; font-size: 0.875rem; color: var(--color-muted); } .ds-legend li { display: flex; align-items: center; gap: 0.375rem; } .ds-sw { display: inline-block; width: 0.625rem; height: 0.625rem; } .ds-sw-sq { border-radius: 0.125rem; } .ds-sw-ring { border-radius: 9999px; border: 2px solid; box-sizing: border-box; }"
     }
   ],
   "narrative": {
@@ -257,7 +327,12 @@
       {
         "name": "The One Accent Rule",
         "section": "colors",
-        "body": "Petrol Blue is the only accent color. It marks interaction and emphasis, never fills large areas; tints are 10% opacity at most."
+        "body": "Petrol Blue is the only accent color. It marks interaction and emphasis, never fills large areas; tints are 10% opacity at most. The data palette is the one sanctioned exception, and only inside charts."
+      },
+      {
+        "name": "The Data Colour Rule",
+        "section": "colors",
+        "body": "These colours live only inside charts and their legends. Colour follows the entity (running is always Data Petrol), never its rank; text, values and axes stay in text colours; a second encoding (shape, label or legend) always backs colour up."
       },
       {
         "name": "The Quiet Label Rule",
@@ -287,7 +362,8 @@
       "Don't introduce a second accent color; the alternative teal (#0f766e) is only tried if Ahmet asks.",
       "Don't add a dark theme; the Deep Petrol band is the only inverted surface.",
       "Don't use gradients outside photo overlays.",
-      "Don't animate beyond the two-pixel hover lift and color transitions."
+      "Don't animate beyond the two-pixel hover lift and color transitions. Charts render without entrance animation.",
+      "Don't use dual-axis charts; two scales get two panels on a shared time axis."
     ]
   }
 }

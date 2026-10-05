@@ -42,12 +42,18 @@ export default function PaceChart({ weeks }: { weeks: WeekPoint[] }) {
     >
       <LineChart
         responsive
+        title="Weekly running pace. Use the arrow keys to read values week by week."
+        desc={summary}
         data={weeks}
         margin={chartMargin}
         style={{ width: "100%", height: 220 }}
       >
         <CartesianGrid {...gridProps} />
-        <XAxis {...xAxisProps} dataKey="week" tickFormatter={(week: string) => formatTick(week, long)} />
+        <XAxis
+          {...xAxisProps}
+          dataKey="week"
+          tickFormatter={(week: string) => formatTick(week, long)}
+        />
         <YAxis
           {...yAxisProps}
           reversed
@@ -71,13 +77,12 @@ export default function PaceChart({ weeks }: { weeks: WeekPoint[] }) {
           }}
         />
         <Line
-          type="monotone"
+          type="linear"
           dataKey="runPace"
           name="Pace"
           stroke={COLORS.run}
           strokeWidth={2}
-          connectNulls
-          dot={showDots(paces.length) ? { r: 3, fill: COLORS.run, strokeWidth: 0 } : false}
+          dot={{ r: showDots(paces.length) ? 3 : 2, fill: COLORS.run, strokeWidth: 0 }}
           activeDot={{ r: 4, stroke: COLORS.surface, strokeWidth: 2 }}
           isAnimationActive={false}
         />

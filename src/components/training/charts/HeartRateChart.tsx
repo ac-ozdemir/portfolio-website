@@ -55,12 +55,18 @@ export default function HeartRateChart({
     >
       <LineChart
         responsive
+        title="Weekly average heart rate. Use the arrow keys to read values week by week."
+        desc={summary}
         data={shown}
         margin={chartMargin}
         style={{ width: "100%", height: 220 }}
       >
         <CartesianGrid {...gridProps} />
-        <XAxis {...xAxisProps} dataKey="week" tickFormatter={(week: string) => formatTick(week, long)} />
+        <XAxis
+          {...xAxisProps}
+          dataKey="week"
+          tickFormatter={(week: string) => formatTick(week, long)}
+        />
         <YAxis {...yAxisProps} domain={[low, high]} ticks={ticks} />
         <Tooltip
           cursor={lineCursor}
@@ -78,13 +84,12 @@ export default function HeartRateChart({
           }}
         />
         <Line
-          type="monotone"
+          type="linear"
           dataKey={key}
           name="Heart rate"
           stroke={color}
           strokeWidth={2}
-          connectNulls
-          dot={showDots(values.length) ? { r: 3, fill: color, strokeWidth: 0 } : false}
+          dot={{ r: showDots(values.length) ? 3 : 2, fill: color, strokeWidth: 0 }}
           activeDot={{ r: 4, stroke: COLORS.surface, strokeWidth: 2 }}
           isAnimationActive={false}
         />

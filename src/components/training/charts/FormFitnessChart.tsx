@@ -5,6 +5,7 @@ import {
   Line,
   LineChart,
   ReferenceArea,
+  ReferenceDot,
   ReferenceLine,
   Tooltip,
   XAxis,
@@ -98,6 +99,15 @@ export default function FormFitnessChart({ points }: { points: FormPoint[] }) {
   const high = Math.max(15, Math.ceil(Math.max(...tsbValues) + 5));
   const bounds = [low, TSB_BOUNDS.fatigued, TSB_BOUNDS.optimal, TSB_BOUNDS.fresh, high];
   const long = points.length > 200;
+  const loadMax = Math.max(
+    20,
+    ...points.flatMap((p) => [p.ctl ?? 0, p.atl ?? 0]),
+  );
+  const loadTicks = Array.from(
+    { length: Math.ceil(loadMax / 20) + 1 },
+    (_, i) => i * 20,
+  );
+  const today = [...points].reverse().find((p) => p.tsb != null);
   const tickFormatter = (date: string) => formatTick(date, long);
 
   const tooltip = (
@@ -112,6 +122,8 @@ export default function FormFitnessChart({ points }: { points: FormPoint[] }) {
     />
   );
 
+  const summary = summarize(points);
+
   return (
     <ChartFrame
       title="Form & fitness"
@@ -119,13 +131,14 @@ export default function FormFitnessChart({ points }: { points: FormPoint[] }) {
       legend={[
         { label: "Fitness (CTL)", color: COLORS.run, shape: "line" },
         { label: "Fatigue (ATL)", color: COLORS.crossfit, shape: "line" },
-        { label: "Form (TSB)", color: COLORS.form, shape: "line" },
       ]}
-      summary={summarize(points)}
+      summary={summary}
       empty={points.length === 0 ? "No form and fitness data for this period." : undefined}
     >
       <LineChart
         responsive
+        title="Fitness and fatigue, daily. Use the arrow keys to read values day by day."
+        desc={summary}
         data={points}
         syncId={SYNC_ID}
         margin={margin}
@@ -133,7 +146,11 @@ export default function FormFitnessChart({ points }: { points: FormPoint[] }) {
       >
         <CartesianGrid {...gridProps} />
         <XAxis dataKey="date" hide />
-        <YAxis {...yAxisProps} domain={[0, "auto"]} />
+        <YAxis
+          {...yAxisProps}
+          domain={[0, loadTicks[loadTicks.length - 1]]}
+          ticks={loadTicks}
+        />
         {tooltip}
         <Line
           type="monotone"
@@ -155,9 +172,13 @@ export default function FormFitnessChart({ points }: { points: FormPoint[] }) {
         />
       </LineChart>
 
-      <p className="mt-4 mb-1 text-xs font-medium text-muted">Form (TSB)</p>
+      <p className="mt-4 mb-1 text-xs font-medium text-muted">
+        Form (TSB) · the dot marks today
+      </p>
       <LineChart
         responsive
+        title="Form, daily, with fatigued, optimal, neutral and fresh zones. Use the arrow keys to read values day by day."
+        desc={summary}
         data={points}
         syncId={SYNC_ID}
         margin={margin}
@@ -180,12 +201,14 @@ export default function FormFitnessChart({ points }: { points: FormPoint[] }) {
             }}
           />
         ))}
-        <ReferenceLine y={0} stroke="var(--color-border)" />
+        <ReferenceLine y={0} stroke="var(--color-muted)" strokeDasharray="3 3" />
         <XAxis {...xAxisProps} dataKey="date" tickFormatter={tickFormatter} />
         <YAxis
           {...yAxisProps}
           domain={[low, high]}
-          ticks={[TSB_BOUNDS.fatigued, TSB_BOUNDS.optimal, TSB_BOUNDS.fresh]}
+          // The fresh boundary (+5) sits too close to 0 to label both; the band shows it.
+          ticks={[TSB_BOUNDS.fatigued, TSB_BOUNDS.optimal, 0]}
+          interval={0}
           tickFormatter={(value: number) => formatSigned(value).replace(".0", "")}
         />
         {tooltip}
@@ -198,6 +221,17 @@ export default function FormFitnessChart({ points }: { points: FormPoint[] }) {
           dot={false}
           isAnimationActive={false}
         />
+        {today && (
+          // Ties the chart to the Form number in the indicator band.
+          <ReferenceDot
+            x={today.date}
+            y={today.tsb!}
+            r={4}
+            fill={COLORS.form}
+            stroke={COLORS.surface}
+            strokeWidth={2}
+          />
+        )}
       </LineChart>
     </ChartFrame>
   );

@@ -17,6 +17,8 @@ export const xAxisProps = {
   tickLine: false,
   axisLine: { stroke: "var(--color-border)" },
   minTickGap: 28,
+  // Evenly spaced ticks that still respect minTickGap at narrow widths.
+  interval: "equidistantPreserveStart",
   tickMargin: 8,
 } as const;
 

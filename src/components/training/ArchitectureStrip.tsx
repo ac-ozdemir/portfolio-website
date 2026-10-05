@@ -19,15 +19,15 @@ export default function ArchitectureStrip() {
       >
         Pipeline
       </h2>
-      <ol className="mt-4 flex flex-col gap-3 md:flex-row md:items-start md:gap-0">
+      <ol className="mt-4 flex flex-col gap-1 md:flex-row md:items-start md:gap-0">
         {stages.map(({ name, detail }, index) => (
-          <li key={name} className="flex items-start gap-3 md:flex-1">
+          <li key={name} className="flex flex-col gap-1 md:flex-1 md:flex-row md:items-start md:gap-3">
             <div className="flex-1">
               <p className="font-mono text-sm text-foreground">{name}</p>
               <p className="mt-0.5 text-sm text-muted">{detail}</p>
             </div>
             {index < stages.length - 1 && (
-              <ArrowRightIcon className="mt-0.5 hidden h-4 w-4 shrink-0 text-accent md:mx-4 md:block" />
+              <ArrowRightIcon className="h-4 w-4 shrink-0 rotate-90 text-accent md:mx-4 md:mt-0.5 md:rotate-0" />
             )}
           </li>
         ))}
