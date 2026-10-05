@@ -127,7 +127,7 @@ export default function FormFitnessChart({ points }: { points: FormPoint[] }) {
   return (
     <ChartFrame
       title="Form & fitness"
-      note="Daily, from all training. Form is fitness minus fatigue; not affected by the activity filter."
+      note="Fitness is training built up over about six weeks, fatigue is roughly the last week, and form is the difference: below zero means tired, above zero rested. Daily, from all training; not affected by the activity filter."
       legend={[
         { label: "Fitness (CTL)", color: COLORS.run, shape: "line" },
         { label: "Fatigue (ATL)", color: COLORS.crossfit, shape: "line" },

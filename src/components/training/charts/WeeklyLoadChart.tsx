@@ -67,8 +67,8 @@ export default function WeeklyLoadChart({
       title="Weekly training load"
       note={
         series.length > 1
-          ? "Training load (TRIMP) per week, stacked by activity"
-          : `Training load (TRIMP) per week, ${series[0].label.toLowerCase()} only`
+          ? "How hard each week was: training load (TRIMP) from duration and heart rate, stacked by activity"
+          : `How hard each week was: training load (TRIMP) from duration and heart rate, ${series[0].label.toLowerCase()} only`
       }
       legend={legend}
       summary={summary}

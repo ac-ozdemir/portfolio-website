@@ -74,7 +74,7 @@ export default function VdotChart({ points }: { points: VdotPoint[] }) {
   return (
     <ChartFrame
       title="VDOT history"
-      note="Running fitness estimated from races and qualifying interval sessions. Shows all history; not affected by the filters."
+      note="A running fitness score from races and hard interval sessions; higher means faster. Shows all history; not affected by the filters."
       legend={[
         { label: "Race", color: COLORS.run, shape: "dot" },
         { label: "Interval session", color: COLORS.crossfit, shape: "ring" },

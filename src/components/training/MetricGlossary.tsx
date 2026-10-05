@@ -37,11 +37,8 @@ const terms = [
 
 export default function MetricGlossary() {
   return (
-    <div className="mt-6">
-      <p className="max-w-[58ch] text-foreground/90">
-        How to read these numbers: five metrics drive this dashboard.
-      </p>
-      <dl className="mt-4 grid gap-x-12 gap-y-5 text-sm md:grid-cols-2">
+    <div>
+      <dl className="grid gap-x-12 gap-y-5 text-sm md:grid-cols-2">
         {terms.map(({ name, abbreviation, meaning }) => (
           <div key={name}>
             <dt>

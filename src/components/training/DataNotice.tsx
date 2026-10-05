@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-import { REPO_URL } from "./ProjectLinks";
+import { REPO_URL } from "./links";
 import { InfoIcon } from "./icons";
 
 function Notice({ title, children }: { title: string; children: ReactNode }) {

@@ -9,29 +9,24 @@ const stages = [
 
 export default function ArchitectureStrip() {
   return (
-    <section
-      aria-labelledby="pipeline-heading"
-      className="mx-auto max-w-5xl px-6 pt-10"
+    <ol
+      aria-label="Data pipeline"
+      className="flex flex-col gap-1 md:flex-row md:items-start md:gap-0"
     >
-      <h2
-        id="pipeline-heading"
-        className="text-sm font-medium tracking-wide text-accent uppercase"
-      >
-        Pipeline
-      </h2>
-      <ol className="mt-4 flex flex-col gap-1 md:flex-row md:items-start md:gap-0">
-        {stages.map(({ name, detail }, index) => (
-          <li key={name} className="flex flex-col gap-1 md:flex-1 md:flex-row md:items-start md:gap-3">
-            <div className="flex-1">
-              <p className="font-mono text-sm text-foreground">{name}</p>
-              <p className="mt-0.5 text-sm text-muted">{detail}</p>
-            </div>
-            {index < stages.length - 1 && (
-              <ArrowRightIcon className="h-4 w-4 shrink-0 rotate-90 text-accent md:mx-4 md:mt-0.5 md:rotate-0" />
-            )}
-          </li>
-        ))}
-      </ol>
-    </section>
+      {stages.map(({ name, detail }, index) => (
+        <li
+          key={name}
+          className="flex flex-col gap-1 md:flex-1 md:flex-row md:items-start md:gap-3"
+        >
+          <div className="flex-1">
+            <p className="font-mono text-sm text-foreground">{name}</p>
+            <p className="mt-0.5 text-sm text-muted">{detail}</p>
+          </div>
+          {index < stages.length - 1 && (
+            <ArrowRightIcon className="h-4 w-4 shrink-0 rotate-90 text-accent md:mx-4 md:mt-0.5 md:rotate-0" />
+          )}
+        </li>
+      ))}
+    </ol>
   );
 }

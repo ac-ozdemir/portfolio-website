@@ -4,11 +4,9 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import TrainingHeader from "@/components/training/TrainingHeader";
 import IndicatorBand from "@/components/training/IndicatorBand";
-import ArchitectureStrip from "@/components/training/ArchitectureStrip";
-import ProjectLinks from "@/components/training/ProjectLinks";
 import { StaleNotice, UnavailableNotice } from "@/components/training/DataNotice";
 import DashboardSection from "@/components/training/DashboardSection";
-import CaseStudy from "@/components/training/CaseStudy";
+import HowItsBuilt from "@/components/training/HowItsBuilt";
 import { hoursSince, summarize } from "@/lib/training/derive";
 import { formatTimestamp } from "@/lib/training/format";
 import { loadDashboard } from "@/lib/training/load";
@@ -55,11 +53,11 @@ export default async function TrainingDashboardPage() {
           />
         )}
 
-        <div className="mt-10">
-          {summary && <IndicatorBand summary={summary} />}
-          <ArchitectureStrip />
-          <ProjectLinks />
-        </div>
+        {summary && (
+          <div className="mt-10">
+            <IndicatorBand summary={summary} />
+          </div>
+        )}
 
         {result.ok && summary && (
           <DashboardSection
@@ -67,7 +65,7 @@ export default async function TrainingDashboardPage() {
             loadSeriesStart={summary.loadSeriesStart}
           />
         )}
-        <CaseStudy />
+        <HowItsBuilt />
       </main>
       <Footer />
     </>

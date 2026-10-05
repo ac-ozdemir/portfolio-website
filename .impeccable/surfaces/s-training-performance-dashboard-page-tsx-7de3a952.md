@@ -8,8 +8,8 @@ related_targets: ["src/lib/training","src/components/training"]
 # Surface: Training Performance Dashboard detail page
 
 ## Scope and mode
-Route `/projects/training-performance-dashboard`. One page, three parts: Summary → Dashboard → Case study.
-Summary is Persuade, the Dashboard section is Operate, the Case study is Read. Extension of the incumbent
+Route `/projects/training-performance-dashboard`. One page, dashboard first: Header + live numbers → Dashboard (filters, charts) → How it's built (intro, metric glossary, architecture + pipeline strip, case study). Reordered 2026-10-05 at Ahmet's request: the page should open as a dashboard, and each number should explain itself where it appears.
+Header is Persuade, the Dashboard is Operate, How it's built is Read. Extension of the incumbent
 "Warm Precision" world; no new world.
 
 ## Audience, job, proof
@@ -36,19 +36,18 @@ OWN-WORLD: Warm paper, linen hairlines, one petrol accent. Figures set in Geist 
 Mono only for meta lines (last update, pipeline stage names). Data colour is petrol tones plus a single
 warm contrast. No shadows, no gradients, no nested cards.
 
-STORY: The visitor understands it is real and live, believes it is built end to end (architecture strip,
-GitHub), then reads the case study or opens the code.
+STORY: The visitor sees live numbers and charts first, each with a plain-language meaning beside it, so it reads as a working dashboard; then scrolls to how it was built (glossary, architecture, decisions) and opens the code.
 
-FIRST VIEWPORT: An "All projects" back link (no eyebrow label), page title, one-sentence lead. Directly
-below, a four-cell indicator band framed by hairlines: Form (TSB) with its zone, Fitness (CTL), latest
-VDOT with its source, last update in mono. Under the band the architecture strip Strava → Cloud Functions
-→ BigQuery → This page, then tool chips and outline buttons (View the code, Read the case study). On
-mobile the band becomes 2×2 and all four numbers sit in the first screen.
+FIRST VIEWPORT: An "All projects" back link (no eyebrow label), page title, one-sentence lead, outline
+buttons View the code and How it's built. Directly below, a four-cell indicator band framed by hairlines:
+Form (TSB) with its zone, Fitness (CTL), VDOT with its source, last update in mono, each with a one-line
+plain meaning. The filters and the Form & fitness chart follow immediately; no glossary or pipeline in
+between. On mobile the band becomes 2×2 and all four numbers sit in the first screen.
 
 SIGNATURE: Shaded TSB zones behind the Form & Fitness chart (chart step). Motion grammar: colour
 transitions and the 2px card lift only.
 
-FORM: Pinned by Ahmet in shape (Summary → Dashboard → Case study); concept-seed not run, so no seed key.
+FORM: Pinned by Ahmet (shape 2026-10-04; reordered dashboard-first 2026-10-05); concept-seed not run, so no seed key.
 Code-led.
 
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance

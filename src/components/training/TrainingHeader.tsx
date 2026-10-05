@@ -1,6 +1,7 @@
 import Link from "next/link";
 
-import { ArrowLeftIcon } from "./icons";
+import { ArrowLeftIcon, GitHubIcon } from "./icons";
+import { REPO_URL, outlineButtonClass } from "./links";
 
 export default function TrainingHeader() {
   return (
@@ -22,6 +23,15 @@ export default function TrainingHeader() {
         and VDOT every night.
       </p>
 
+      <div className="mt-8 flex flex-wrap gap-3">
+        <a href={REPO_URL} className={outlineButtonClass}>
+          <GitHubIcon className="h-4 w-4" />
+          View the code
+        </a>
+        <a href="#how-its-built" className={outlineButtonClass}>
+          How it’s built
+        </a>
+      </div>
     </header>
   );
 }
