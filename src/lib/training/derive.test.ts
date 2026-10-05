@@ -100,3 +100,30 @@ describe("formatPace", async () => {
     expect(formatPace(value)).toBe(text);
   });
 });
+
+describe("describeForm", async () => {
+  const { describeForm } = await import("./derive");
+  const load = (ctl: number, atl: number) => day("2026-10-04", ctl - atl, ctl);
+
+  it("reads today's numbers in the neutral zone when fatigue leads", () => {
+    expect(describeForm({ ...load(48.6, 62.8), tsb: -7 })).toBe(
+      "Fatigue (62.8) is above fitness (48.6), so form is −7.0. The last week has been heavier than my six-week base: a little tired, but within the normal range.",
+    );
+  });
+
+  it("calls a neutral form with fitness ahead balanced", () => {
+    expect(describeForm(load(50, 48))).toContain("balanced");
+  });
+
+  it.each([
+    [40, 75, "deeply tired"],
+    [40, 60, "productive training block"],
+    [50, 40, "rested and ready"],
+  ])("fitness %d, fatigue %d reads as %s", (ctl, atl, phrase) => {
+    expect(describeForm(load(ctl, atl))).toContain(phrase);
+  });
+
+  it("returns null without values", () => {
+    expect(describeForm({ ...load(40, 40), tsb: null })).toBeNull();
+  });
+});

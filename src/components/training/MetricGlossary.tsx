@@ -8,18 +8,18 @@ const terms = [
     name: "Fitness",
     abbreviation: "CTL, Chronic Training Load",
     meaning:
-      "My average daily training load over roughly the last six weeks. It rises slowly with consistent training.",
+      "The training base my body has adapted to. It’s a weighted average of my daily training load over roughly six weeks, so it climbs slowly through weeks of consistent training and fades slowly during breaks. A higher number means I can handle, and have been handling, more training.",
   },
   {
     name: "Fatigue",
     abbreviation: "ATL, Acute Training Load",
     meaning:
-      "The same average over about one week. It jumps after hard weeks and drops quickly with rest.",
+      "How much the last few days have taken out of me. Same calculation over about one week, so it reacts fast: a hard week pushes it well above fitness, and a few easy days bring it back down.",
   },
   {
     name: "Form",
     abbreviation: "TSB, Training Stress Balance",
-    meaning: `Fitness minus fatigue: below zero means tired from recent training, above zero means rested. Zones: fatigued below ${whole(TSB_BOUNDS.fatigued)}, optimal training ${whole(TSB_BOUNDS.fatigued)} to ${whole(TSB_BOUNDS.optimal)}, neutral ${whole(TSB_BOUNDS.optimal)} to ${whole(TSB_BOUNDS.fresh)}, fresh above ${whole(TSB_BOUNDS.fresh)}.`,
+    meaning: `Fitness minus fatigue: how ready I am to perform today. It is usually negative during a hard training block, which is expected, and turns positive after rest. Before a race the aim is slightly positive: fit, but not tired. Zones: fatigued below ${whole(TSB_BOUNDS.fatigued)}, optimal training ${whole(TSB_BOUNDS.fatigued)} to ${whole(TSB_BOUNDS.optimal)}, neutral ${whole(TSB_BOUNDS.optimal)} to ${whole(TSB_BOUNDS.fresh)}, fresh above ${whole(TSB_BOUNDS.fresh)}.`,
   },
   {
     name: "Training load",
