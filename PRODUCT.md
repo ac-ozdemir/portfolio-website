@@ -47,7 +47,7 @@ trust.
   acceptable to show publicly (confirmed by Ahmet). GPS/route data and activity names are never
   published.
 - Strava data must carry "Powered by Strava" attribution (Strava API terms).
-- Domain `acozdemir.com` is planned but not yet purchased.
+- Live at `acozdemir.com` (Vercel).
 
 ## Brand Commitments
 

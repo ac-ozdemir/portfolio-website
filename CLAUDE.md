@@ -25,7 +25,7 @@ Claude bu projede geliştirici + tasarımcı + proje yöneticisi rolünü üstle
 - **Framework:** Next.js (App Router, TypeScript)
 - **Stil:** Tailwind CSS
 - **Hosting:** Vercel
-- **Domain:** `acozdemir.com` — müsaitliği doğrulandı (Namecheap üzerinden ~$10-15/yıl civarı, ilk yıl promosyonlu olabilir). Henüz satın alınmadı.
+- **Domain:** `acozdemir.com` — satın alındı ve Vercel'e bağlı, site canlı (2026-10-05 itibarıyla doğrulandı). Vercel'in `*.vercel.app` adresleri SSO korumalı; herkese açık adres `acozdemir.com`.
 - **Blog/yazı bölümü:** İlk sürümde YOK (kapsam dışı bırakıldı, ileride eklenebilir)
 
 ## Site Yapısı (v1 kapsamı)
