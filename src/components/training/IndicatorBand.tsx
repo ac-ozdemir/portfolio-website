@@ -15,8 +15,7 @@ interface Indicator {
   value: string;
   context: string;
   /** Plain-language meaning, for readers who don't know the metric. */
-  hint?: string;
-  mono?: boolean;
+  hint: string;
 }
 
 const EMPTY = "—";
@@ -27,12 +26,7 @@ const VDOT_SOURCE_NAMES = {
   tempo: () => "Tempo run",
 } as const;
 
-function indicators({
-  load,
-  zone,
-  vdot,
-  generatedAt,
-}: DashboardSummary): Indicator[] {
+function indicators({ load, zone, vdot }: DashboardSummary): Indicator[] {
   return [
     {
       label: "Form (TSB)",
@@ -47,18 +41,18 @@ function indicators({
       hint: "My long-term training base",
     },
     {
+      label: "Fatigue (ATL)",
+      value: load?.atl != null ? formatOneDecimal(load.atl) : EMPTY,
+      context: "One-week training load",
+      hint: "How much recent training has taken out of me",
+    },
+    {
       label: "Running fitness (VDOT)",
       value: vdot?.vdot != null ? formatOneDecimal(vdot.vdot) : EMPTY,
       context: vdot
         ? `${VDOT_SOURCE_NAMES[vdot.source](vdot.label)}, ${formatDay(vdot.date)}`
         : "No qualifying run yet",
       hint: "Higher means faster race times",
-    },
-    {
-      label: "Last update",
-      value: formatShortTimestamp(generatedAt),
-      context: "Istanbul time, refreshed nightly",
-      mono: true,
     },
   ];
 }
@@ -74,23 +68,18 @@ export default function IndicatorBand({
     <section aria-label="Current numbers" className="border-y border-border">
       <div className="mx-auto max-w-5xl px-6 py-10">
         <dl className="grid grid-cols-2 gap-x-6 gap-y-8 md:grid-cols-4">
-          {indicators(summary).map(({ label, value, context, hint, mono }) => (
+          {indicators(summary).map(({ label, value, context, hint }) => (
             <div key={label} className="flex flex-col">
               <dt className="text-sm font-medium text-muted">{label}</dt>
-              <dd
-                className={
-                  mono
-                    ? "mt-2 font-mono text-base leading-9 text-foreground"
-                    : "mt-2 text-3xl font-semibold tabular-nums text-accent"
-                }
-              >
-                {value}
-              </dd>
+              <dd className="mt-2 text-3xl font-semibold tabular-nums text-accent">{value}</dd>
               <dd className="mt-1 text-sm text-foreground/80">{context}</dd>
-              {hint && <dd className="text-sm text-muted">{hint}</dd>}
+              <dd className="text-sm text-muted">{hint}</dd>
             </div>
           ))}
         </dl>
+        <p className="mt-6 font-mono text-xs text-muted">
+          Last update {formatShortTimestamp(summary.generatedAt)} · Istanbul time, refreshed nightly
+        </p>
         {reading && (
           <div className="mt-8 border-t border-border pt-6">
             <p className="max-w-[62ch] text-foreground/90">
