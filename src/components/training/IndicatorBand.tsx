@@ -21,6 +21,12 @@ interface Indicator {
 
 const EMPTY = "—";
 
+const VDOT_SOURCE_NAMES = {
+  race: (label: string | null) => label ?? "Race",
+  interval: () => "Interval session",
+  tempo: () => "Tempo run",
+} as const;
+
 function indicators({
   load,
   zone,
@@ -44,7 +50,7 @@ function indicators({
       label: "Running fitness (VDOT)",
       value: vdot?.vdot != null ? formatOneDecimal(vdot.vdot) : EMPTY,
       context: vdot
-        ? `${vdot.source === "race" ? (vdot.label ?? "Race") : "Interval session"}, ${formatDay(vdot.date)}`
+        ? `${VDOT_SOURCE_NAMES[vdot.source](vdot.label)}, ${formatDay(vdot.date)}`
         : "No qualifying run yet",
       hint: "Higher means faster race times",
     },

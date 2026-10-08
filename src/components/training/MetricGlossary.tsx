@@ -31,7 +31,7 @@ const terms = [
     name: "VDOT",
     abbreviation: "Jack Daniels’ running fitness score",
     meaning:
-      "Estimated from race results and hard interval sessions. Higher means faster; each value maps to predicted race times.",
+      "Estimated from race results, hard interval sessions and tempo runs. Higher means faster; each value maps to predicted race times.",
   },
 ];
 

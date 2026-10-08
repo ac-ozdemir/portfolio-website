@@ -6,7 +6,7 @@ export const SUPPORTED_SCHEMA_VERSION = 1;
 
 export type Category = "run" | "crossfit" | "other";
 
-export type VdotSource = "race" | "interval";
+export type VdotSource = "race" | "interval" | "tempo";
 
 /** One day of training load. Only days from the start of the load series are included. */
 export interface DailyLoad {
@@ -24,7 +24,7 @@ export interface VdotPoint {
   date: string;
   vdot: number | null;
   source: VdotSource;
-  /** Race name for race points (races are public events); null for intervals. */
+  /** Race name for race points (races are public events); null for workouts. */
   label: string | null;
 }
 

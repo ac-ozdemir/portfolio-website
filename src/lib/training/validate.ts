@@ -39,7 +39,7 @@ function isVdotRow(value: unknown) {
     isRow(value) &&
     isDate(value.date) &&
     isNumberOrNull(value.vdot) &&
-    (value.source === "race" || value.source === "interval") &&
+    (value.source === "race" || value.source === "interval" || value.source === "tempo") &&
     (value.label === null || typeof value.label === "string")
   );
 }

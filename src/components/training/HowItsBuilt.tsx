@@ -19,7 +19,7 @@ const LATER_SECTIONS = [
   },
   {
     title: "Metrics and their limits",
-    body: "Training load is Banister TRIMP from heart rate; fitness and fatigue are its 42- and 7-day exponentially weighted averages, and form is the difference. VDOT comes from races and qualifying interval sessions. TRIMP is only an approximation for CrossFit, and heart-rate coverage is reliable from November 2025 onwards.",
+    body: "Training load is Banister TRIMP from heart rate; fitness and fatigue are its 42- and 7-day exponentially weighted averages, and form is the difference. VDOT comes from races and from interval and tempo sessions I tag as workouts in Strava, counted only when heart rate shows the effort was hard enough. TRIMP is only an approximation for CrossFit, and heart-rate coverage is reliable from November 2025 onwards.",
   },
   {
     title: "What real data revealed",

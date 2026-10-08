@@ -57,6 +57,18 @@ describe("validateDashboard", () => {
     expect(validateDashboard(payload).ok).toBe(false);
   });
 
+  it("accepts tempo VDOT points", () => {
+    const payload = valid();
+    payload.vdot.push({ date: "2026-10-02", vdot: 50.1, source: "tempo", label: null });
+    expect(validateDashboard(payload).ok).toBe(true);
+  });
+
+  it("rejects an unknown VDOT source", () => {
+    const payload = valid();
+    payload.vdot[0].source = "long-run";
+    expect(validateDashboard(payload).ok).toBe(false);
+  });
+
   it("rejects non-objects", () => {
     expect(validateDashboard(null).ok).toBe(false);
     expect(validateDashboard([]).ok).toBe(false);

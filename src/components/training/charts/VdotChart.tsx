@@ -34,7 +34,8 @@ function quarterTicks(from: number, to: number): number[] {
   }
 }
 
-// Races are filled, intervals are rings: shape repeats the colour encoding.
+// Races are filled dots; workouts share the contrast colour and differ by shape
+// (interval ring, tempo square), so the source never depends on colour alone.
 function RaceDot({ cx, cy }: { cx?: number; cy?: number }) {
   return <circle cx={cx} cy={cy} r={5} fill={COLORS.run} stroke={COLORS.surface} strokeWidth={2} />;
 }
@@ -43,8 +44,25 @@ function IntervalDot({ cx, cy }: { cx?: number; cy?: number }) {
   return <circle cx={cx} cy={cy} r={4.5} fill={COLORS.surface} stroke={COLORS.crossfit} strokeWidth={2} />;
 }
 
+function TempoSquare({ cx = 0, cy = 0 }: { cx?: number; cy?: number }) {
+  return (
+    <rect
+      x={cx - 5}
+      y={cy - 5}
+      width={10}
+      height={10}
+      rx={1.5}
+      fill={COLORS.crossfit}
+      stroke={COLORS.surface}
+      strokeWidth={2}
+    />
+  );
+}
+
+const SOURCE_NAMES = { interval: "Interval session", tempo: "Tempo run" } as const;
+
 const describe = (point: VdotPoint) =>
-  point.source === "race" ? (point.label ?? "Race") : "Interval session";
+  point.source === "race" ? (point.label ?? "Race") : SOURCE_NAMES[point.source];
 
 export default function VdotChart({ points }: { points: VdotPoint[] }) {
   const plotted: Plotted[] = points
@@ -52,6 +70,7 @@ export default function VdotChart({ points }: { points: VdotPoint[] }) {
     .map((point) => ({ ...point, time: Date.parse(`${point.date}T00:00:00Z`) }));
   const races = plotted.filter((point) => point.source === "race");
   const intervals = plotted.filter((point) => point.source === "interval");
+  const tempos = plotted.filter((point) => point.source === "tempo");
 
   const times = plotted.map((point) => point.time);
   const domain: [number, number] = [
@@ -74,17 +93,18 @@ export default function VdotChart({ points }: { points: VdotPoint[] }) {
   return (
     <ChartFrame
       title="VDOT history"
-      note="A running fitness score from races and hard interval sessions; higher means faster. Shows all history; not affected by the filters."
+      note="A running fitness score from races, hard interval sessions and tempo runs; higher means faster. Shows all history; not affected by the filters."
       legend={[
         { label: "Race", color: COLORS.run, shape: "dot" },
         { label: "Interval session", color: COLORS.crossfit, shape: "ring" },
+        { label: "Tempo run", color: COLORS.crossfit, shape: "square" },
       ]}
       summary={summary}
-      empty={plotted.length ? undefined : "No races or qualifying interval sessions yet."}
+      empty={plotted.length ? undefined : "No races or qualifying workouts yet."}
     >
       <ScatterChart
         responsive
-        title="VDOT history, races and interval sessions. Use the arrow keys to read each point."
+        title="VDOT history from races, interval sessions and tempo runs. Use the arrow keys to read each point."
         desc={summary}
         margin={{ ...chartMargin, right: 16 }} style={{ width: "100%", height: 220 }}>
         <CartesianGrid {...gridProps} />
@@ -127,6 +147,7 @@ export default function VdotChart({ points }: { points: VdotPoint[] }) {
         />
         <Scatter name="Race" data={races} shape={RaceDot} isAnimationActive={false} />
         <Scatter name="Interval session" data={intervals} shape={IntervalDot} isAnimationActive={false} />
+        <Scatter name="Tempo run" data={tempos} shape={TempoSquare} isAnimationActive={false} />
       </ScatterChart>
     </ChartFrame>
   );
