@@ -8,6 +8,7 @@ import type { VdotPoint } from "@/lib/training/types";
 import ChartFrame from "./ChartFrame";
 import ChartTooltip from "./ChartTooltip";
 import { COLORS, chartMargin, gridProps, xAxisProps, yAxisProps } from "./chartStyle";
+import VdotSelectionNote from "./VdotSelectionNote";
 
 interface Plotted extends VdotPoint {
   time: number;
@@ -101,6 +102,7 @@ export default function VdotChart({ points }: { points: VdotPoint[] }) {
       ]}
       summary={summary}
       empty={plotted.length ? undefined : "No races or qualifying workouts yet."}
+      footer={<VdotSelectionNote />}
     >
       <ScatterChart
         responsive

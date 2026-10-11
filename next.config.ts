@@ -7,6 +7,8 @@ const contentSecurityPolicy = [
   "img-src 'self' data:",
   "font-src 'self' data:",
   "connect-src 'self'",
+  // Looker Studio report embedded in the training dashboard's case study.
+  "frame-src https://datastudio.google.com https://lookerstudio.google.com",
   "object-src 'none'",
   "base-uri 'self'",
   "form-action 'self'",

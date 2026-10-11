@@ -32,6 +32,7 @@ export default function ChartFrame({
   legend,
   summary,
   empty,
+  footer,
   children,
 }: {
   title: string;
@@ -41,6 +42,8 @@ export default function ChartFrame({
   summary: string;
   /** Message shown instead of the chart when the filters leave no data. */
   empty?: string;
+  /** Extra detail under the chart, shown even when the chart is empty. */
+  footer?: ReactNode;
   children: ReactNode;
 }) {
   return (
@@ -70,6 +73,7 @@ export default function ChartFrame({
           children
         )}
       </div>
+      {footer}
       <figcaption className="sr-only">{empty ?? summary}</figcaption>
     </figure>
   );
