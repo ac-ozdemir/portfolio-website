@@ -1,5 +1,5 @@
 const stats = [
-  { value: "3.5+", label: "Years in Data & Analytics" },
+  { value: "4", label: "Years in Data & Analytics" },
   { value: "75+", label: "Dashboards & Reports Shipped" },
 ];
 
