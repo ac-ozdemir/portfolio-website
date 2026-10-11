@@ -61,12 +61,21 @@ function ActivityIcon(props: SVGProps<SVGSVGElement>) {
   );
 }
 
+function MessageIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...IconProps(props)}>
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+    </svg>
+  );
+}
+
 const projects: {
   title: string;
   description: string;
   tags: string[];
   Icon: (props: SVGProps<SVGSVGElement>) => React.JSX.Element;
   href?: string;
+  linkLabel?: string;
 }[] = [
   {
     title: "Training Performance Dashboard",
@@ -75,6 +84,16 @@ const projects: {
     tags: ["Python", "BigQuery", "Google Cloud", "Next.js"],
     Icon: ActivityIcon,
     href: "/projects/training-performance-dashboard",
+    linkLabel: "Live dashboard and case study",
+  },
+  {
+    title: "AI Agents & Workflows",
+    description:
+      "Two personal AI systems I designed and use daily on Claude: a coach for my running and CrossFit training, and an assistant that runs my task management. Each has its own skill, connected tools and rules.",
+    tags: ["Claude", "Skills", "Connectors", "Workflow design"],
+    Icon: MessageIcon,
+    href: "/projects/ai-agents-workflows",
+    linkLabel: "How they’re set up",
   },
   {
     title: "Real-Time Operational Performance Dashboard",
@@ -114,12 +133,12 @@ export default function Projects() {
       </h2>
 
       <div className="mt-8 grid gap-6 sm:grid-cols-2">
-        {projects.map(({ title, description, tags, Icon, href }) => (
+        {projects.map(({ title, description, tags, Icon, href, linkLabel }) => (
           <article
             key={title}
-            className="relative rounded-lg border border-border p-6 transition-[transform,border-color] hover:-translate-y-0.5 hover:border-accent has-[a:focus-visible]:border-accent has-[a:focus-visible]:outline-2 has-[a:focus-visible]:outline-offset-2 has-[a:focus-visible]:outline-accent"
+            className="relative flex flex-col rounded-lg border border-border p-6 transition-[transform,border-color] hover:-translate-y-0.5 hover:border-accent has-[a:focus-visible]:border-accent has-[a:focus-visible]:outline-2 has-[a:focus-visible]:outline-offset-2 has-[a:focus-visible]:outline-accent"
           >
-            <span className="flex h-10 w-10 items-center justify-center rounded-md bg-accent/10 text-accent">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-accent/10 text-accent">
               <Icon />
             </span>
             <h3 className="mt-4 font-semibold">
@@ -145,12 +164,12 @@ export default function Projects() {
                 </li>
               ))}
             </ul>
-            {href && (
+            {href && linkLabel && (
               <p
-                className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-accent"
+                className="mt-auto inline-flex items-center gap-1.5 pt-4 text-sm font-medium text-accent"
                 aria-hidden="true"
               >
-                Live dashboard and case study
+                {linkLabel}
                 <svg {...IconProps({ className: "h-4 w-4" })}>
                   <line x1="5" y1="12" x2="19" y2="12" />
                   <polyline points="12 5 19 12 12 19" />
