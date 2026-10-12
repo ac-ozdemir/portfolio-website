@@ -85,7 +85,7 @@ export default function Hero() {
             Ahmet Can Özdemir
           </h1>
           <p className="mt-6 max-w-xl text-lg text-muted">
-            Turning data into decisions — nearly 4 years in data analysis,
+            Turning data into decisions — 4 years in data analysis,
             dashboard design, and KPI frameworks.
           </p>
 

@@ -13,8 +13,8 @@ export default function About() {
             an Erasmus exchange in Logistics & Supply Chain Management at
             the University of Duisburg-Essen. I then joined Turkish
             Aerospace as a Data Analyst on the Digital Transformation team,
-            building real-time data infrastructure — and in the nearly 4
-            years since, I&apos;ve stayed on that Data Analyst track,
+            building real-time data infrastructure — and in the 4 years
+            since, I&apos;ve stayed on that Data Analyst track,
             now as a Senior Data Analyst, designing dashboards, KPI
             frameworks, and automated reporting systems used across teams
             and leadership levels.

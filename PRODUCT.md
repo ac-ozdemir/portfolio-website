@@ -64,7 +64,7 @@ trust.
   Tracking (Node-RED), Root-Cause Analysis on a Rising Cost Metric (SQL), this portfolio (Next.js), and
   the Training Performance Dashboard (live data; code at
   `github.com/ac-ozdemir/training-performance-dashboard`).
-- Summary stats on the site: nearly 4 years in data & analytics (stat band shows "4"), 75+ dashboards and reports shipped.
+- Summary stats on the site: 4 years in data & analytics, 75+ dashboards and reports shipped.
 - Personal facts used on the site: Istanbul Marathon 2025 in 3:30, Divemaster.
 - Absent — must not be fabricated: testimonials, client logos, employer names beyond what Ahmet
   approves, performance or business-impact numbers not already on the site.
