@@ -42,9 +42,17 @@ export const metadata: Metadata = {
 
 const prose = "max-w-[58ch] leading-7 text-foreground/90";
 
-function Section({ title, children }: { title: string; children: ReactNode }) {
+function Section({
+  title,
+  id,
+  children,
+}: {
+  title: string;
+  id?: string;
+  children: ReactNode;
+}) {
   return (
-    <section className="border-t border-border pt-10 md:pt-12">
+    <section id={id} className="scroll-mt-20 border-t border-border pt-10 md:pt-12">
       <h2 className="text-2xl font-semibold tracking-tight">{title}</h2>
       <div className="mt-4">{children}</div>
     </section>
@@ -133,7 +141,7 @@ export default function GarminMcpPage() {
               </div>
             </Section>
 
-            <Section title="Design decisions">
+            <Section title="Design decisions" id="design-decisions">
               <ul className="max-w-[62ch] space-y-4 leading-7 text-foreground/90">
                 {DECISIONS.map(({ title, text }) => (
                   <li key={title}>
