@@ -24,7 +24,7 @@ const d1: Node = { name: "D1", detail: "SQLite database", cloudflare: true };
 // Every lane ends in D1. On wide screens D1 is one tall box on the right that
 // all lanes point into; on phones each lane is a vertical list ending in D1.
 const lanes: { label: string; nodes: Node[] }[] = [
-  { label: "Nightly sync", nodes: [garmin, cron] },
+  { label: "Daily data sync", nodes: [garmin, cron] },
   { label: "History import, one-off", nodes: [backfill] },
   { label: "The coach asks a question", nodes: [claude, oauth, mcp] },
 ];
