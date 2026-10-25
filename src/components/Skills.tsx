@@ -17,8 +17,10 @@ const groups = [
     items: [
       "MS SQL Server",
       "PostgreSQL",
+      "SQLite (Cloudflare D1)",
       "BigQuery",
       "Stored Procedures",
+      "SQL Performance Tuning",
       "Scheduled Jobs",
     ],
   },
