@@ -61,6 +61,17 @@ function ActivityIcon(props: SVGProps<SVGSVGElement>) {
   );
 }
 
+function ServerIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...IconProps(props)}>
+      <rect x="3" y="4" width="18" height="7" rx="1.5" />
+      <rect x="3" y="13" width="18" height="7" rx="1.5" />
+      <line x1="7" y1="7.5" x2="7.01" y2="7.5" />
+      <line x1="7" y1="16.5" x2="7.01" y2="16.5" />
+    </svg>
+  );
+}
+
 function MessageIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg {...IconProps(props)}>
@@ -85,6 +96,15 @@ const projects: {
     Icon: ActivityIcon,
     href: "/projects/training-performance-dashboard",
     linkLabel: "Live dashboard and case study",
+  },
+  {
+    title: "Garmin → Claude Health Data Bridge",
+    description:
+      "My own MCP server on Cloudflare that gives my Claude training coach secure access to my Garmin sleep, recovery and training data, synced twice a day with the full history.",
+    tags: ["Cloudflare Workers", "D1 (SQLite)", "MCP", "OAuth 2.1"],
+    Icon: ServerIcon,
+    href: "/projects/garmin-mcp",
+    linkLabel: "How it works",
   },
   {
     title: "AI Agents & Workflows",
