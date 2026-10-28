@@ -109,7 +109,7 @@ const projects: {
   {
     title: "AI Agents & Workflows",
     description:
-      "Two personal AI systems I designed and use daily on Claude: a coach for my running and CrossFit training, and an assistant that runs my task management. Each has its own skill, connected tools and rules.",
+      "Two personal AI systems I designed and use daily on Claude: a coach for my running and CrossFit training, and an assistant that manages my tasks, email, calendar and side-project work. Each has its own skill, connected tools and rules.",
     tags: ["Claude", "Skills", "Connectors", "Workflow design"],
     Icon: MessageIcon,
     href: "/projects/ai-agents-workflows",

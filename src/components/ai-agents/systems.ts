@@ -34,17 +34,17 @@ export const SYSTEMS: AiSystem[] = [
       "The first version was too cautious and flagged risk constantly. I changed the default to load-ready: it pulls back only when I report a problem or the data shows a concrete signal.",
   },
   {
-    id: "john-todoist-assistant",
-    name: "John (Todoist Assistant)",
+    id: "john-personal-assistant",
+    name: "John (Personal Assistant)",
     purpose:
-      "A daily assistant for task and life management. It keeps one Todoist system consistent, so everything I capture is filed, prioritised and closed properly.",
+      "A daily assistant for my tasks, email and calendar. It keeps Todoist, my inbox and my calendar consistent, so everything I capture is filed, prioritised and followed up.",
     setup:
-      "I configured it as a Claude project connected only to Todoist, with a written standard for projects, labels and priorities. Its scope is deliberately narrow: it manages and plans, and when something needs real content work it writes a starting prompt for another project. It never deletes tasks or opens a new section without asking.",
+      "I configured it as a Claude project connected to Todoist, Gmail and Google Calendar, with a written standard for projects, labels and priorities. Its scope is deliberately narrow: it manages and plans, and when something needs real content work it writes a starting prompt for another project. It never sends an email, deletes anything or accepts an invite on its own.",
     examples: [
-      "Files new tasks and ideas in the right place with a priority.",
-      "Adds a decision note before closing a task and opens a new one for the next step.",
-      "Moves ideas through a simple lifecycle until each becomes a task or is dropped.",
-      "Handles reminders in conversation, since my Todoist plan cannot set them through the API.",
+      "Runs my side projects as phased task lists; each work session starts by pulling the next task.",
+      "Files tasks with a priority and closes them with a decision note.",
+      "Tidies my inbox and summarises the emails that matter.",
+      "Adds dated plans and events to my calendar.",
     ],
     lessonTitle: "A lesson",
     lesson:

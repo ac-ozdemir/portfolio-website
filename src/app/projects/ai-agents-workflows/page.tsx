@@ -9,7 +9,7 @@ import { ArrowLeftIcon } from "@/components/training/icons";
 
 const title = "AI Agents & Workflows | Ahmet Can Özdemir";
 const description =
-  "Two personal AI systems I designed and use daily on Claude: a training coach and a task management assistant, each with its own skill, connected tools and rules.";
+  "Two personal AI systems I designed and use daily on Claude: a training coach and an assistant for tasks, email, calendar and side-project work, each with its own skill, connected tools and rules.";
 const path = "/projects/ai-agents-workflows";
 
 export const metadata: Metadata = {
