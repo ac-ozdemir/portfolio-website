@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import { AI_SKILLS } from "./garmin-mcp/content";
+
 type Skill = string | { label: string; href: string };
 
 const groups: { label: string; note?: string; items: Skill[] }[] = [
@@ -43,27 +45,14 @@ const groups: { label: string; note?: string; items: Skill[] }[] = [
     label: "Other",
     items: ["Docker", "Node-RED", "AI-Assisted Analytics Workflows", "Jira"],
   },
-  // Rule (2026-10-25): only skills with a project to show for them; every
-  // item links to that project.
+  // Generated from the case study's evidence list; add new skills there.
   {
     label: "AI & LLM Tooling",
-    note: "Each links to the project where I used it.",
-    items: [
-      { label: "MCP Server Development", href: "/projects/garmin-mcp" },
-      {
-        label: "Tool Design for LLMs",
-        href: "/projects/garmin-mcp#design-decisions",
-      },
-      { label: "OAuth 2.1 for AI Connectors", href: "/projects/garmin-mcp" },
-      {
-        label: "AI-Assisted Development (Claude Code)",
-        href: "/projects/training-performance-dashboard",
-      },
-      {
-        label: "Claude Skills, Connectors & Scheduled Tasks",
-        href: "/projects/ai-agents-workflows",
-      },
-    ],
+    note: "Each links to the evidence in the Garmin MCP case study.",
+    items: AI_SKILLS.map(({ id, label }) => ({
+      label,
+      href: `/projects/garmin-mcp#${id}`,
+    })),
   },
 ];
 
