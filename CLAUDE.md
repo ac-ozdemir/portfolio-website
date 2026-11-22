@@ -68,6 +68,8 @@ Claude bu projede geliştirici + tasarımcı + proje yöneticisi rolünü üstle
 - Open Graph (OG) görseli ve başlığı ayarlanmalı — site LinkedIn/CV üzerinden paylaşılınca düzgün bir
   önizleme kartı çıkması hedeflenir
 - Basit bir `sitemap.xml` ve `robots.txt` yeterlidir; ileri SEO çalışması (anahtar kelime optimizasyonu vb.) kapsam dışı
+- Google Search Console: `acozdemir.com` Domain mülkü, GoDaddy'deki TXT kaydıyla doğrulandı (kaydı silme —
+  doğrulama düşer). DNS GoDaddy'de, hosting Vercel'de. Sitemap gönderildi (2026-11-22)
 
 ## Git / GitHub İş Akışı
 - Kullanıcının GitHub deneyimi yok — akış olabildiğince sade tutulmalı
@@ -80,7 +82,9 @@ Claude bu projede geliştirici + tasarımcı + proje yöneticisi rolünü üstle
 - Görseller optimize edilmeli (Next.js `<Image>` bileşeni kullanılmalı)
 - Temel a11y kuralları: yeterli renk kontrastı, görsellerde `alt` metni, klavye ile gezilebilirlik
 - Ağır bir "Lighthouse skoru 100 olsun" baskısı yok; amaç makul hız ve herkesin siteyi rahat kullanabilmesi
-- Analytics eklenmiyor (v1 kapsamı dışı)
+- **Analytics (2026-11-22):** Google Analytics 4 (`G-NCYRCH2F3W`), çerez onay banner'ı arkasında — GA yalnızca
+  "Accept" sonrası yüklenir (GDPR). ID `NEXT_PUBLIC_GA_ID` ile gelir, sadece Vercel Production'da tanımlı.
+  GA için CSP'de izinli alan adları `next.config.ts`'te. GA4 seçimi bilinçli: Ahmet platformu CV için öğreniyor
 
 ## Kod Standartları
 - TypeScript strict mode
