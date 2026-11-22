@@ -1,12 +1,21 @@
 import type { NextConfig } from "next";
 
+// Google Analytics 4 hosts, per Google's CSP guide. GA itself only loads
+// after the visitor accepts the cookie banner.
+const googleAnalytics = {
+  script: "https://*.googletagmanager.com",
+  img: "https://*.google-analytics.com https://*.googletagmanager.com",
+  connect:
+    "https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com",
+};
+
 const contentSecurityPolicy = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline'",
+  `script-src 'self' 'unsafe-inline' ${googleAnalytics.script}`,
   "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data:",
+  `img-src 'self' data: ${googleAnalytics.img}`,
   "font-src 'self' data:",
-  "connect-src 'self'",
+  `connect-src 'self' ${googleAnalytics.connect}`,
   // Looker Studio report embedded in the training dashboard's case study.
   "frame-src https://datastudio.google.com https://lookerstudio.google.com",
   "object-src 'none'",
