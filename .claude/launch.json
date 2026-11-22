@@ -6,6 +6,12 @@
       "runtimeExecutable": "/bin/zsh",
       "runtimeArgs": ["-c", "export PATH=/Users/ahmetcanozdemir/.nvm/versions/node/v24.20.0/bin:$PATH && npm run dev"],
       "port": 3000
+    },
+    {
+      "name": "portfolio-prod",
+      "runtimeExecutable": "/bin/zsh",
+      "runtimeArgs": ["-c", "export PATH=/Users/ahmetcanozdemir/.nvm/versions/node/v24.20.0/bin:$PATH && npx next start -p 3001"],
+      "port": 3001
     }
   ]
 }
